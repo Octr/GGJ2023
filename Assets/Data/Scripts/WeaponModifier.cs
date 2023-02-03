@@ -19,9 +19,12 @@ public class WeaponModifier : MonoBehaviour
 	[SerializeField] private float m_salvoReload = 1;
 	[SerializeField] private float m_shotReload = 1;
 	[SerializeField] private float m_calculatedRateOfFire;
+	//Accuracy
+	[SerializeField] private float m_dispersionAngle = 10f;
+	//Other
+	[SerializeField] private float m_projectileSpeed =1; 
 	
-	//
-
+	//Note: when doing multipl
 
 	private float CalculateRateOfFire(int salvoLength, float salvoReload, float shotReload)
 	{
@@ -33,6 +36,6 @@ public class WeaponModifier : MonoBehaviour
 	private void Start()
 	{
 		float testValue;
-		Debug.Log($"Test RoF is:{CalculateRateOfFire(1,1,2)}");
+		Debug.Log($"Test RoF is:{CalculateRateOfFire(m_salvoLength,m_salvoReload,m_salvoReload)}");
 	}
 }
