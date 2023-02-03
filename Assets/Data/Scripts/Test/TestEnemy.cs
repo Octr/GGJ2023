@@ -1,7 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class TestEnemy : MonoBehaviour
@@ -12,8 +9,9 @@ public class TestEnemy : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
+            Debug.Log("Oh no I'm deeeaaaaddd");
             OnEnemyDied.Invoke();
+            Destroy(gameObject);
         }
     }
 }
