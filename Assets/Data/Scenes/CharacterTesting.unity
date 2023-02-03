@@ -572,6 +572,11 @@ MonoBehaviour:
   projectileToShoot: {fileID: 8302166367347694412, guid: e256fd15de538474db3fb47393c0bb36, type: 3}
   fireTimer: 0
   rateOfFire: 0.3
+  salvoTimer: 0
+  salvoTime: 0.1
+  numberPerSalvo: 5
+  numberFiredSoFarInSalvo: 0
+  firingSalvo: 0
 --- !u!4 &2116555990
 Transform:
   m_ObjectHideFlags: 0

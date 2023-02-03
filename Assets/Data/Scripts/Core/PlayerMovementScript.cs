@@ -13,6 +13,14 @@ public class PlayerMovementScript : MonoBehaviour
 
     public float fireTimer;
     public float rateOfFire;
+
+    public float salvoTimer;
+    public float salvoTime;
+    public int numberPerSalvo;
+
+    public int numberFiredSoFarInSalvo;
+    public bool firingSalvo;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,18 +51,37 @@ public class PlayerMovementScript : MonoBehaviour
             shootingDirection.LookAt(hit.point); // Look at the point
             shootingDirection.rotation = Quaternion.Euler(new Vector3(0, shootingDirection.rotation.eulerAngles.y, 0)); // Clamp the x and z rotation
         }
-        fireTimer -= Time.deltaTime;
+        if (!firingSalvo)
+        {
+            fireTimer -= Time.deltaTime;
+        }
+        else
+        {
+            salvoTimer -= Time.deltaTime;
+        }
+        
         if (Input.GetKey(KeyCode.Mouse0))
         {
             //Try to shoot
-            if (fireTimer < 0)
+            if (fireTimer < 0 && !firingSalvo)
+            {
+                firingSalvo = true;
+                numberFiredSoFarInSalvo = 0;
+                salvoTimer = salvoTime;
+                fireTimer = rateOfFire;
+            }
+            if (salvoTimer < 0)
             {
                 GameObject newProjectile = Instantiate(projectileToShoot);
                 newProjectile.transform.position = transform.position;
                 newProjectile.GetComponent<Projectile>().movementDirection = shootingDirection.forward.normalized;
-                fireTimer = rateOfFire;
+                salvoTimer = salvoTime;
+                numberFiredSoFarInSalvo += 1;
+                if (numberFiredSoFarInSalvo >= numberPerSalvo)
+                {
+                    firingSalvo = false;
+                }
             }
-
         }
     }
 }
