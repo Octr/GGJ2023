@@ -300,6 +300,7 @@ MonoBehaviour:
   canUpgrade: 0
   playerAtTree: 0
   upgradeCanvas: {fileID: 8417548035663642231}
+  m_WeaponMultiplierSource: {fileID: 11400000, guid: 14ae2e34fec9fe4439c9aa741040ccd6, type: 2}
 --- !u!1 &7469877262982299152
 GameObject:
   m_ObjectHideFlags: 0
