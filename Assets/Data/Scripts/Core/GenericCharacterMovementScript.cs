@@ -36,6 +36,8 @@ public class GenericCharacterMovementScript : MonoBehaviour
 
     public float yMovementPerspectiveMultiplier;
 
+    public Animator animator1;
+    public Animator animator2;
     // Start is called before the first frame update
     void Start()
     {
@@ -79,6 +81,22 @@ public class GenericCharacterMovementScript : MonoBehaviour
         }
         newMovementVelocity.z *= yMovementPerspectiveMultiplier;
         movementRBody.velocity = newMovementVelocity * speed * Time.deltaTime;
+        if (movementRBody.velocity.magnitude > 0)
+        {
+            if (animator1 != null)
+            {
+
+                animator1.SetFloat("Movement", Mathf.Min(movementRBody.velocity.magnitude, 0.5f));
+                animator1.SetFloat("MoveX", moveX);
+                animator1.SetFloat("MoveY", moveY);
+            }
+            if (animator2 != null)
+            {
+                animator2.SetFloat("Movement", Mathf.Min(movementRBody.velocity.magnitude, 0.5f));
+                animator2.SetFloat("MoveX", moveX);
+                animator2.SetFloat("MoveY", moveY);
+            }
+        }
     }
 
     public virtual void Look()
