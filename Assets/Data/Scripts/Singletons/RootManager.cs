@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RootManager : SingletonParent<RootManager>
@@ -7,7 +5,7 @@ public class RootManager : SingletonParent<RootManager>
 	[SerializeField] private bool isRetreating;
 	[SerializeField] private Vector3 m_scaleAmount;
 	[SerializeField] private float m_rootTimescale;
-	[SerializeField] private SpriteRenderer m_spriteRenderer;
+	[SerializeField] private Vector3 m_minimumScale;
 
 	private float m_timer;
 
@@ -20,20 +18,30 @@ public class RootManager : SingletonParent<RootManager>
 
 	private void Closing()
 	{
+		float tempX = transform.localScale.x;
+		
 		if (isRetreating)
 		{
 			Retreating();
 			return;
 		}
 
+		if (tempX <= m_minimumScale.x)
+		{
+			Debug.Log("Game Ended!");
+			return;
+		}
+
 		if (m_timer < 1)
 		{
-			gameObject.transform.localScale += m_scaleAmount;
+			gameObject.transform.localScale += m_scaleAmount * m_rootTimescale;
 		}
 		else
 		{
 			m_timer = 0;
 		}
+		
+		
 	}
 
 	private void Retreating()
@@ -41,7 +49,7 @@ public class RootManager : SingletonParent<RootManager>
 		if (!isRetreating) return;
 		if (m_timer < 1)
 		{
-			gameObject.transform.localScale -= m_scaleAmount;
+			gameObject.transform.localScale -= m_scaleAmount * m_rootTimescale;
 		}
 		else
 		{
@@ -50,8 +58,19 @@ public class RootManager : SingletonParent<RootManager>
 		}
 	}
 
-	private void OnValidate()
+	private void OnTriggerEnter(Collider other)
 	{
-		m_spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+		if (other.tag == "Player")
+		{
+			Debug.Log("Stop Do Damage To Player!");
+		}
+	}
+	
+	private void OnTriggerExit(Collider other)
+	{
+		if (other.tag == "Player")
+		{
+			Debug.Log("Do Damage To Player!");
+		}
 	}
 }
