@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2151982315202341233, guid: 0fa3e48c5ef7d4544922412ca261f681, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4952105983441101670, guid: 0fa3e48c5ef7d4544922412ca261f681, type: 3}
       propertyPath: m_Controller
       value: 
@@ -22,6 +26,10 @@ PrefabInstance:
     - target: {fileID: 7650108985565940412, guid: 0fa3e48c5ef7d4544922412ca261f681, type: 3}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8594048765456116601, guid: 0fa3e48c5ef7d4544922412ca261f681, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8962695062760598566, guid: 0fa3e48c5ef7d4544922412ca261f681, type: 3}
       propertyPath: m_Color.b
@@ -90,6 +98,11 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 8962695063245075179, guid: 0fa3e48c5ef7d4544922412ca261f681, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0fa3e48c5ef7d4544922412ca261f681, type: 3}
+--- !u!95 &556804692814436832 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4952105983441101670, guid: 0fa3e48c5ef7d4544922412ca261f681, type: 3}
+  m_PrefabInstance: {fileID: 4828774472895855238}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4567392608518589404 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8962695062543708506, guid: 0fa3e48c5ef7d4544922412ca261f681, type: 3}
@@ -154,6 +167,8 @@ MonoBehaviour:
   isPlayer: 0
   shootingPos: {fileID: 5518107316356761211}
   yMovementPerspectiveMultiplier: 2
+  animator1: {fileID: 556804692814436832}
+  animator2: {fileID: 0}
   agent: {fileID: 2027117375}
   target: {fileID: 0}
 --- !u!54 &4567392608706414702 stripped
