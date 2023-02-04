@@ -13,6 +13,9 @@ public class Projectile : MonoBehaviour
     public GameObject hitmarker;
 
     public bool isPlayerProjectile;
+
+    public SpriteRenderer render;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +28,9 @@ public class Projectile : MonoBehaviour
         totalTime += Time.deltaTime;
         if (totalTime >= maxTime)
         {
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
-        transform.Translate(movementDirection*speed*Time.deltaTime);
+        transform.parent.Translate(movementDirection*speed*Time.deltaTime);
     }
     public void OnTriggerEnter(Collider other)
     {
@@ -37,7 +40,7 @@ public class Projectile : MonoBehaviour
             other.GetComponent<GenericCharacterMovementScript>().TakeDamage(damage);
             GameObject newHitmarker = Instantiate(hitmarker);
             newHitmarker.transform.position = transform.position;
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
     }
 }

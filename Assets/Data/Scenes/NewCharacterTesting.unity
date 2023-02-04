@@ -705,6 +705,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5632554178015499455, guid: e898b81718ba92a4aa301744196cae55, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632554178015499455, guid: e898b81718ba92a4aa301744196cae55, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632554178015499455, guid: e898b81718ba92a4aa301744196cae55, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632554178015499455, guid: e898b81718ba92a4aa301744196cae55, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632554178015499455, guid: e898b81718ba92a4aa301744196cae55, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 207.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632554178015499455, guid: e898b81718ba92a4aa301744196cae55, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 20.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5632554178877451864, guid: e898b81718ba92a4aa301744196cae55, type: 3}
       propertyPath: m_Name
       value: SeedManager
