@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,7 @@ public class WaveManager : SingletonParent<WaveManager>
     /// 4. 👌 detect when waves are over - sub to OnDestroy event of enemies 
     /// 5. 👌 be able to notify others when there is an active wave - via public variable, not event yet 
     /// </summary>
-    
+
     [Header("Enemy Data")]
     [SerializeField] private GameObject[] m_enemies;
     [SerializeField] private int m_enemySpawnCount = 2;
@@ -39,7 +40,7 @@ public class WaveManager : SingletonParent<WaveManager>
         }
     }
     
-    private void OnDestroy()
+    private void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
         EnemyMovement.OnEnemyDied -= OnEnemyDied;
