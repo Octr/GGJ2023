@@ -9,6 +9,13 @@ public class Upgrader : MonoBehaviour
     public bool canUpgrade;
     public bool playerAtTree;
     public GameObject upgradeCanvas;
+
+    public WeaponBonus m_WeaponMultiplierSource;
+    
+    
+    
+    
+    
     // Start is called before the first frame update
 
     public void Start()
@@ -51,6 +58,24 @@ public class Upgrader : MonoBehaviour
     public void TriggerUpgrade(UpgradeTypeEnum upgradeType)
     {
         upgradeCanvas.SetActive(false);
+        
+        //Joe Addition
+        switch (upgradeType)
+        {
+            case UpgradeTypeEnum.rateOfFire:
+                m_WeaponMultiplierSource.ChangeRateOfFireMultiplier(m_WeaponMultiplierSource.PowerUpRateOfFire); //should be set to a variable
+                break;
+            case UpgradeTypeEnum.damage:
+                m_WeaponMultiplierSource.ChangeDamageMultiplier(m_WeaponMultiplierSource.PowerUpDamage);
+                break;
+            case UpgradeTypeEnum.projectileVelocity:
+                m_WeaponMultiplierSource.ChangeVelocityMultiplier(m_WeaponMultiplierSource.PowerUpVelocity);
+                break;
+            default:
+                break;
+        }
+        
+        
         Debug.Log("Upgrade");
     }
 }
