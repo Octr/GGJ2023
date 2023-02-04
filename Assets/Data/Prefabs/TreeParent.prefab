@@ -243,6 +243,7 @@ GameObject:
   - component: {fileID: 1825948185027043056}
   - component: {fileID: 8345333738221928875}
   - component: {fileID: 5379082043935296121}
+  - component: {fileID: 638672320}
   m_Layer: 0
   m_Name: TreeParent
   m_TagString: Untagged
@@ -301,6 +302,19 @@ MonoBehaviour:
   playerAtTree: 0
   upgradeCanvas: {fileID: 8417548035663642231}
   m_WeaponMultiplierSource: {fileID: 11400000, guid: 14ae2e34fec9fe4439c9aa741040ccd6, type: 2}
+--- !u!114 &638672320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7170939432180497315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44dd2802f9b27b4469ee8545d43c4865, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_treeAnimator: {fileID: 6425509912354082634}
 --- !u!1 &7469877262982299152
 GameObject:
   m_ObjectHideFlags: 0
