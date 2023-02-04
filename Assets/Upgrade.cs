@@ -8,7 +8,7 @@ public enum UpgradeTypeEnum
 {
     rateOfFire,
     damage,
-    projectileVelocity
+    projectileVelocity,
 }
 
 public class Upgrade : MonoBehaviour, IPointerClickHandler

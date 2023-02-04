@@ -26,6 +26,8 @@ public class GenericCharacterMovementScript : MonoBehaviour
     public float projectileSpeed;
     public float projectileDamage;
 
+    public float inaccuracy;
+
     public bool firing;
 
     public float health = 100;
