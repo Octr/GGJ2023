@@ -390,6 +390,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8962695063245075179, guid: 0fa3e48c5ef7d4544922412ca261f681, type: 3}
+      propertyPath: salvoTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962695063245075179, guid: 0fa3e48c5ef7d4544922412ca261f681, type: 3}
+      propertyPath: rateOfFire
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962695063245075179, guid: 0fa3e48c5ef7d4544922412ca261f681, type: 3}
+      propertyPath: salvoTimer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fa3e48c5ef7d4544922412ca261f681, type: 3}
 --- !u!1 &1868340826
