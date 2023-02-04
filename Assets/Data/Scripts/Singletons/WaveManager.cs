@@ -23,18 +23,26 @@ public class WaveManager : SingletonParent<WaveManager>
     public bool WaveIsActive => m_waveIsActive;
     private bool m_waveIsActive = false;
     private int m_activeEnemyCount = 0;
-    
+
     private void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
-        TestEnemy.OnEnemyDied += OnEnemyDied;
+        EnemyMovement.OnEnemyDied += OnEnemyDied;
         TestUI.OnPowerUpSelected += OnPowerUpSelected;
+        
+        // always start scene with no enemies 
+        GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
+        for (int i = 0; i < gameObjects.Length; i++)
+        {
+            Destroy(gameObjects[i].gameObject);
+            Debug.Log("destroying objects");
+        }
     }
     
     private void OnDestroy()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
-        TestEnemy.OnEnemyDied -= OnEnemyDied;
+        EnemyMovement.OnEnemyDied -= OnEnemyDied;
         TestUI.OnPowerUpSelected -= OnPowerUpSelected;   
     }
     
@@ -43,6 +51,14 @@ public class WaveManager : SingletonParent<WaveManager>
     {
         m_wavesDefeated = 0;
         m_enemySpawnCount = 1;
+        
+        // always start scene with no enemies 
+        GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
+        for (int i = 0; i < gameObjects.Length; i++)
+        {
+            Destroy(gameObjects[i].gameObject);
+            Debug.Log("destroying objects");
+        }
     }
     
     private void OnPowerUpSelected()
@@ -83,5 +99,12 @@ public class WaveManager : SingletonParent<WaveManager>
         m_waveIsActive = false;
         m_wavesDefeated++;
         // probably going to be other stuff such as creating downtime and allowing power upgrades 
+    }
+
+    private void OnGUI()
+    {
+        GUILayout.Space(20);
+        GUI.color = Color.red;
+        GUILayout.Label($"Waves defeated : {m_wavesDefeated}");
     }
 }

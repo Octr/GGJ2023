@@ -35,7 +35,7 @@ public class TestWeaponPickUp : MonoBehaviour
     {
         //Rate of fire multiplier test
         m_shotReload = m_wModifer.CalculateMultiplier(
-            m_wModifer.m_shotReload, 
+            m_wModifer.m_salvoTime, 
             m_wBonus.ShotReloadX, 
             m_wBonus.ShotReloadMIN, 
             m_wBonus.ShotReloadMAX);
@@ -48,7 +48,7 @@ public class TestWeaponPickUp : MonoBehaviour
     {
         //Rate of fire multiplier test
         m_salvoLength = m_wModifer.CalculateMultiplier(
-            m_wModifer.m_salvoLength, 
+            m_wModifer.m_numPerSalvo, 
             m_wBonus.SalvoLengthX, 
             m_wBonus.SalvoLengthMIN, 
             m_wBonus.SalvoLengthMAX);

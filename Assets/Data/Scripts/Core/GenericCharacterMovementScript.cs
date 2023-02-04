@@ -87,7 +87,7 @@ public class GenericCharacterMovementScript : MonoBehaviour
     }
     public virtual void Death()
     {
-
+        
     }
     public void Update()
     {

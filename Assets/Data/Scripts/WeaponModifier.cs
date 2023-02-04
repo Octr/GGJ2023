@@ -2,17 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
+
+//A) Player MovementScript controls 
+//B) WeaponBonusScript 
+
 
 public class WeaponModifier : MonoBehaviour
 {
 	
 	//Script References
-	[SerializeField] public PlayerMovementScript m_playerMovementScript;
+	[SerializeField] public PlayerMovementScript m_pms;
 	[SerializeField] public WeaponBonus m_weaponBonus;
 	//Rate of fire settings
-	public int m_salvoLength =1;
-	public float m_salvoReload = 1;
-	public float m_shotReload = 1;
+	public int m_numPerSalvo =1; //the number of shots in the slavo
+	public float m_salvoReload = 1; //Time between a new salvo
+	public float m_salvoTime = 1; //time between shots within the salvo
 	public float m_calculatedRateOfFire;
 	//Accuracy
 	public float m_dispersionAngle = 1f;
@@ -20,6 +25,10 @@ public class WeaponModifier : MonoBehaviour
 	public float m_projectileSpeed =1; 
 	
 
+	//numPerSalvo = SalvoLength
+	//salvoTime = shotReload
+	//rateOfFire = salvoReload
+	
 	public float CalculateRateOfFire(int salvoLength, float salvoReload, float shotReload)
 	{
 		float rateOfFire;
@@ -46,17 +55,11 @@ public class WeaponModifier : MonoBehaviour
 		return result;
 	}
 
-	public void AdditiveWeaponMultiplier()
-	{
-		
-	}
-
-
 	public void SetWeaponBonusToPlayer()
 	{
-		m_playerMovementScript.numberPerSalvo = (int) (m_playerMovementScript.numberPerSalvo *m_weaponBonus.SalvoLengthX); //SalvoLength
-		m_playerMovementScript.salvoTime = m_playerMovementScript.salvoTime * m_weaponBonus.SalvoReloadX;
-		m_playerMovementScript.rateOfFire = m_playerMovementScript.rateOfFire * m_weaponBonus.ShotReloadX; //RoF / Shot Length
+		m_pms.numberPerSalvo = (int) (m_pms.numberPerSalvo *m_weaponBonus.SalvoLengthX); //SalvoLength
+		m_pms.salvoTime = m_pms.salvoTime * m_weaponBonus.ShotReloadX;
+		m_pms.rateOfFire = m_pms.rateOfFire * m_weaponBonus.SalvoReloadX; //RoF / Shot Length
 	}
 	
 	private void Start()
@@ -66,6 +69,10 @@ public class WeaponModifier : MonoBehaviour
 
 	private void Update()
 	{
-		SetWeaponBonusToPlayer();
+		//SetWeaponBonusToPlayer();
+		
+		//CalculateRateOfFire();
+		
+		//Debug.Log($"Weapon Bonus RoF: is{}");
 	}
 }
