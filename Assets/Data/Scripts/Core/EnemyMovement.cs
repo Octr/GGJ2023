@@ -9,12 +9,19 @@ public class EnemyMovement : GenericCharacterMovementScript
     {
         
     }
+    public void Start()
+    {
+        AIManager.instance.AddEnemy(this) ;
+    }
+
     public NavMeshAgent agent;
+    public Transform target;
+
     public override void Move()
     {
         agent.enabled = true;
         NavMeshPath newPath = new NavMeshPath();
-        agent.CalculatePath(PlayerMovementScript.instance.transform.position,newPath);
+        agent.CalculatePath(target.position, newPath);
         agent.enabled = false;
         if (newPath != null)
         {
@@ -39,5 +46,10 @@ public class EnemyMovement : GenericCharacterMovementScript
     {
         shootingDirection.LookAt(PlayerMovementScript.instance.transform.position); // Look at the point
         shootingDirection.rotation = Quaternion.Euler(new Vector3(0, shootingDirection.rotation.eulerAngles.y, 0)); // Clamp the x and z rotation
+    }
+
+    public override void Death()
+    {
+        AIManager.instance.RemoveEnemy(this);
     }
 }
