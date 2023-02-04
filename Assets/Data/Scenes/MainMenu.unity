@@ -452,14 +452,14 @@ PrefabInstance:
     - target: {fileID: 1327991765350900873, guid: 7115638cb2512cd47bdc29e6b64322be, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1583346870522998848}
     - target: {fileID: 1327991765350900873, guid: 7115638cb2512cd47bdc29e6b64322be, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1327991765350900873, guid: 7115638cb2512cd47bdc29e6b64322be, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: QuitButton
+      value: QuitGame
       objectReference: {fileID: 0}
     - target: {fileID: 1327991765350900873, guid: 7115638cb2512cd47bdc29e6b64322be, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -512,14 +512,14 @@ PrefabInstance:
     - target: {fileID: 1583346868682018392, guid: 7115638cb2512cd47bdc29e6b64322be, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1583346870522998848}
     - target: {fileID: 1583346868682018392, guid: 7115638cb2512cd47bdc29e6b64322be, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1583346868682018392, guid: 7115638cb2512cd47bdc29e6b64322be, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayButton
+      value: PlayGame
       objectReference: {fileID: 0}
     - target: {fileID: 1583346868682018392, guid: 7115638cb2512cd47bdc29e6b64322be, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
