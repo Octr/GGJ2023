@@ -12,11 +12,11 @@ public class GenericCharacterMovementScript : MonoBehaviour
     public GameObject projectileToShoot;
 
     public float fireTimer;
-    public float rateOfFire;
+    public float timeBetweenBursts;
 
     public float salvoTimer;
-    public float salvoTime;
-    public int numberPerSalvo;
+    public float burstFireSpeed;
+    public int bulletsPerBurst;
 
     public int numberFiredSoFarInSalvo;
     public bool firingSalvo;
@@ -129,8 +129,8 @@ public class GenericCharacterMovementScript : MonoBehaviour
             {
                 firingSalvo = true;
                 numberFiredSoFarInSalvo = 0;
-                salvoTimer = salvoTime;
-                fireTimer = rateOfFire;
+                salvoTimer = burstFireSpeed;
+                fireTimer = timeBetweenBursts;
             }
             if (salvoTimer < 0)
             {
@@ -146,9 +146,9 @@ public class GenericCharacterMovementScript : MonoBehaviour
                 newProjectileScript.isPlayerProjectile = isPlayer;
                 newProjectile.transform.localScale *= projectileSize;
 
-                salvoTimer = salvoTime;
+                salvoTimer = burstFireSpeed;
                 numberFiredSoFarInSalvo += 1;
-                if (numberFiredSoFarInSalvo >= numberPerSalvo)
+                if (numberFiredSoFarInSalvo >= bulletsPerBurst)
                 {
                     firingSalvo = false;
                 }

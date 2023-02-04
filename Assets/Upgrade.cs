@@ -6,9 +6,12 @@ using UnityEngine.EventSystems;
 
 public enum UpgradeTypeEnum
 {
-    rateOfFire,
+    timeBetweenBursts,
     damage,
     projectileVelocity,
+    inaccuracy,
+    projectileSize,
+    burstFireSpeed,
 }
 
 public class Upgrade : MonoBehaviour, IPointerClickHandler
@@ -16,11 +19,12 @@ public class Upgrade : MonoBehaviour, IPointerClickHandler
     public Upgrader upgrader;
     public TMPro.TextMeshProUGUI upgradeText;
     public Image upgradeImage;
-    public UpgradeTypeEnum upgradeType;
+    public UpgradeTypeEnum proUpgradeType;
+    public UpgradeTypeEnum conUpgradeType;
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        upgrader.TriggerUpgrade(upgradeType);
+        upgrader.TriggerUpgrade(proUpgradeType,conUpgradeType);
     }
 
 }

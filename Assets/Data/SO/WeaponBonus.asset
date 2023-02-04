@@ -12,27 +12,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e6a979d4a29c84c8c8c92b749bc492, type: 3}
   m_Name: WeaponBonus
   m_EditorClassIdentifier: 
-  PowerUpDamage: 0.82
-  PowerUpRateOfFire: -0.01
+  PowerUpDamage: 0.5
+  PowerUpTimeBetweenBursts: -0.1
   PowerUpVelocity: 4
-  SalvoLengthX: 1
-  SalvoReloadX: 1
-  ShotReloadX: 1
-  CalculatedRateOfFireX: 1
-  DispersionAngleX: 1
+  PowerUpSize: 1
+  PowerDownDamage: -0.5
+  PowerDownTimeBetweenBursts: 0
+  PowerDownVelocity: -2
+  PowerDownSize: -0.5
+  BulletsFiredPerBurstX: 1
+  TimeBetweenBurstsX: 1
+  BurstFireSpeedX: 1
+  InacurracyAngleX: 1
   ProjectileSpeedX: 1
-  Damage: 1
-  SalvoLengthMAX: 10
-  SalvoReloadMAX: 9.47
-  ShotReloadMAX: 0.01
-  CalculatedRateOfFireMAX: 10
-  DispersionAngleMAX: 10
-  ProjectileSpeedMAX: 10
-  DamageMAX: 10
-  SalvoLengthMIN: 5.48
-  SalvoReloadMUN: 2.07
-  ShotReloadMIN: 1
-  CalculatedRateOfFireMIN: 0.67
-  DispersionAngleMIN: 1
-  ProjectileSpeedMIN: 1
-  DamageMIN: 0.1
+  ProjectileSizeX: 1
+  DamageX: 1
+  BulletsFiredPerBurstMin: 1
+  TimeBetweenBurstsMin: 0.01
+  BurstFireSpeedMin: 1
+  InacurracyAngleMin: 1
+  ProjectileSpeedMin: 1
+  ProjectileSizeMin: 1
+  DamageMin: 1
+  BulletsFiredPerBurstMax: 1
+  TimeBetweenBurstsMax: 10
+  BurstFireSpeedMax: 1
+  InacurracyAngleMax: 1
+  ProjectileSpeedMax: 1
+  ProjectileSizeMax: 1
+  DamageMax: 1

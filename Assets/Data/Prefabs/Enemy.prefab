@@ -156,10 +156,10 @@ MonoBehaviour:
   shootingDirection: {fileID: 4567392608518589404}
   projectileToShoot: {fileID: 8302166367347694412, guid: e256fd15de538474db3fb47393c0bb36, type: 3}
   fireTimer: 0
-  rateOfFire: 1
+  timeBetweenBursts: 1
   salvoTimer: 0
-  salvoTime: 0.5
-  numberPerSalvo: 2
+  burstFireSpeed: 0.2
+  bulletsPerBurst: 2
   numberFiredSoFarInSalvo: 0
   firingSalvo: 0
   moveX: 0

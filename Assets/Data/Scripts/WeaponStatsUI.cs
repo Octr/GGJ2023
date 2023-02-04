@@ -27,7 +27,7 @@ public class WeaponStatsUI : MonoBehaviour
     void Update()
     {
         //RoF
-        float rof = CalculateRateOfFire(((int)m_Pms.numberPerSalvo), m_Pms.rateOfFire,m_Pms.salvoTime );
+        float rof = CalculateRateOfFire(((int)m_Pms.bulletsPerBurst), m_Pms.timeBetweenBursts,m_Pms.burstFireSpeed );
         m_RoF.text = $"{rof:N0}";
         //
         //m_projectileVelocity.text = $"{m_Pms.speed}";

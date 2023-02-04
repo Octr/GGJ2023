@@ -49,8 +49,9 @@ public class Upgrader : MonoBehaviour
         canUpgrade = true;
         foreach (Upgrade upgrade in upgrades)
         {
-            upgrade.upgradeType = (UpgradeTypeEnum)UnityEngine.Random.Range(0,Enum.GetValues(typeof(UpgradeTypeEnum)).Length);
-            upgrade.upgradeText.text = upgrade.upgradeType.ToString()+" +1";
+            upgrade.proUpgradeType = (UpgradeTypeEnum)UnityEngine.Random.Range(0,Enum.GetValues(typeof(UpgradeTypeEnum)).Length);
+            upgrade.conUpgradeType = (UpgradeTypeEnum)UnityEngine.Random.Range(0, Enum.GetValues(typeof(UpgradeTypeEnum)).Length);
+            upgrade.upgradeText.text = upgrade.proUpgradeType.ToString()+" +2\n"+ upgrade.conUpgradeType.ToString()+" -1";
         }
     }
     public void OnTriggerEnter(Collider other)
@@ -68,26 +69,49 @@ public class Upgrader : MonoBehaviour
         }
     }
 
-    public void TriggerUpgrade(UpgradeTypeEnum upgradeType)
+    public void TriggerUpgrade(UpgradeTypeEnum proUpgradeType, UpgradeTypeEnum conUpgradeType)
     {
         upgradeCanvas.SetActive(false);
         OnPowerUpSelected.Invoke();
         //Joe Addition
-        switch (upgradeType)
+
+        switch (proUpgradeType)
         {
-            case UpgradeTypeEnum.rateOfFire:
-                PlayerMovementScript.instance.rateOfFire =  m_WeaponMultiplierSource.ChangeRateOfFireMultiplier(m_WeaponMultiplierSource.PowerUpRateOfFire); //should be set to a variable
+            case UpgradeTypeEnum.timeBetweenBursts:
+                PlayerMovementScript.instance.timeBetweenBursts = m_WeaponMultiplierSource.ChangeTimeBetweenBurstsMultiplier(m_WeaponMultiplierSource.PowerUpTimeBetweenBursts); //should be set to a variable
                 break;
             case UpgradeTypeEnum.damage:
-                PlayerMovementScript.instance.projectileDamage=  m_WeaponMultiplierSource.ChangeDamageMultiplier(m_WeaponMultiplierSource.PowerUpDamage);
+                PlayerMovementScript.instance.projectileDamage = m_WeaponMultiplierSource.ChangeDamageMultiplier(m_WeaponMultiplierSource.PowerUpDamage);
                 break;
             case UpgradeTypeEnum.projectileVelocity:
                 PlayerMovementScript.instance.projectileSpeed = m_WeaponMultiplierSource.ChangeVelocityMultiplier(m_WeaponMultiplierSource.PowerUpVelocity);
                 break;
+            case UpgradeTypeEnum.projectileSize:
+                PlayerMovementScript.instance.projectileSize = m_WeaponMultiplierSource.ChangeSizeMultiplier(m_WeaponMultiplierSource.PowerUpSize);
+                break;
             default:
                 break;
         }
-        
+
+        switch (conUpgradeType)
+        {
+            case UpgradeTypeEnum.timeBetweenBursts:
+                PlayerMovementScript.instance.timeBetweenBursts = m_WeaponMultiplierSource.ChangeTimeBetweenBurstsMultiplier(m_WeaponMultiplierSource.PowerDownTimeBetweenBursts); //should be set to a variable
+                break;
+            case UpgradeTypeEnum.damage:
+                PlayerMovementScript.instance.projectileDamage = m_WeaponMultiplierSource.ChangeDamageMultiplier(m_WeaponMultiplierSource.PowerDownDamage);
+                break;
+            case UpgradeTypeEnum.projectileVelocity:
+                PlayerMovementScript.instance.projectileSpeed = m_WeaponMultiplierSource.ChangeVelocityMultiplier(m_WeaponMultiplierSource.PowerDownVelocity);
+                break;
+            case UpgradeTypeEnum.projectileSize:
+                PlayerMovementScript.instance.projectileSize = m_WeaponMultiplierSource.ChangeSizeMultiplier(m_WeaponMultiplierSource.PowerDownSize);
+                break;
+            default:
+                break;
+        }
+
+
         Debug.Log("Upgrade");
     }
 }

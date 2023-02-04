@@ -60,9 +60,9 @@ public class WeaponModifier : MonoBehaviour
 
 	public void SetWeaponBonusToPlayer()
 	{
-		m_pms.numberPerSalvo = (int)m_numPerSalvo;
-		m_pms.salvoTime = m_weaponBonus.ShotReloadX;
-		m_pms.rateOfFire = m_weaponBonus.SalvoReloadX;
+		m_pms.bulletsPerBurst = (int)m_numPerSalvo;
+		m_pms.burstFireSpeed = m_weaponBonus.BurstFireSpeedX;
+		m_pms.timeBetweenBursts = m_weaponBonus.TimeBetweenBurstsX;
 	}
 	
 	private void Start()
@@ -77,6 +77,6 @@ public class WeaponModifier : MonoBehaviour
 		SetWeaponBonusToPlayer();
 
 		
-		Debug.Log($"Salvo#{m_pms.numberPerSalvo}");
+		Debug.Log($"Salvo#{m_pms.bulletsPerBurst}");
 	}
 }

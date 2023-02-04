@@ -36,11 +36,11 @@ public class TestWeaponPickUp : MonoBehaviour
         //Rate of fire multiplier test
         m_shotReload = m_wModifer.CalculateMultiplier(
             m_wModifer.m_salvoTime, 
-            m_wBonus.ShotReloadX, 
-            m_wBonus.ShotReloadMIN, 
-            m_wBonus.ShotReloadMAX);
+            m_wBonus.BurstFireSpeedX, 
+            m_wBonus.BurstFireSpeedMin, 
+            m_wBonus.BurstFireSpeedMax);
 
-        m_PlayerMovementScript.rateOfFire = m_shotReload;
+        m_PlayerMovementScript.timeBetweenBursts = m_shotReload;
     }
     
     
@@ -49,10 +49,10 @@ public class TestWeaponPickUp : MonoBehaviour
         //Rate of fire multiplier test
         m_salvoLength = m_wModifer.CalculateMultiplier(
             m_wModifer.m_numPerSalvo, 
-            m_wBonus.SalvoLengthX, 
-            m_wBonus.SalvoLengthMIN, 
-            m_wBonus.SalvoLengthMAX);
+            m_wBonus.BulletsFiredPerBurstX, 
+            m_wBonus.BulletsFiredPerBurstMin, 
+            m_wBonus.BulletsFiredPerBurstMax);
 
-        m_PlayerMovementScript.rateOfFire = m_salvoLength;
+        m_PlayerMovementScript.timeBetweenBursts = m_salvoLength;
     }
 }

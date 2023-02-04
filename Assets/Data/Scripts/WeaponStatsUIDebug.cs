@@ -19,9 +19,9 @@ public class WeaponStatsUIDebug : MonoBehaviour
 
     void Update()
     {
-        m_salvoLength.text = $"{m_Pms.numberPerSalvo}";
-        m_salvoReload.text = $"{m_Pms.rateOfFire}";
-        m_shotReload.text = $"{m_Pms.salvoTime}";
+        m_salvoLength.text = $"{m_Pms.bulletsPerBurst}";
+        m_salvoReload.text = $"{m_Pms.timeBetweenBursts}";
+        m_shotReload.text = $"{m_Pms.burstFireSpeed}";
 
 
     }
