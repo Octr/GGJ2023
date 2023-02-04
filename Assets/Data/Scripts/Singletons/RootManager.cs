@@ -3,6 +3,9 @@ using UnityEngine;
 public class RootManager : SingletonParent<RootManager>
 {
 	[SerializeField] private bool isRetreating;
+	[SerializeField] private float m_retreatTime = 1.0f;
+	private float m_retreatTimer = 1.0f;
+	
 	[SerializeField] private Vector3 m_scaleAmount;
 	[SerializeField] private float m_rootTimescale;
 	[SerializeField] private Vector3 m_minimumScale;
@@ -18,7 +21,18 @@ public class RootManager : SingletonParent<RootManager>
 	[SerializeField] float m_damageTime;
 
 	public GameObject hitmarker;
-	
+
+	private void Start()
+	{
+		EnemyMovement.OnEnemyDied += SetRetreatTimer;
+	}
+
+	private void OnDisable()
+	{
+		EnemyMovement.OnEnemyDied -= SetRetreatTimer;
+
+	}
+
 	private void Update()
 	{
 		m_timer += Time.deltaTime;
@@ -26,6 +40,11 @@ public class RootManager : SingletonParent<RootManager>
 		if (m_rootGrowthActive) // roots only closing in during an enemy wave 
 		{
 			Closing();
+		}
+
+		if (isRetreating) // retreating flicked to true when enemy dies 
+		{
+			Retreating();
 		}
 
 		if (m_playerIsInTheRoots)
@@ -70,16 +89,24 @@ public class RootManager : SingletonParent<RootManager>
 		}
 	}
 
+	private void SetRetreatTimer()
+	{
+		// set timer to value in the [SerializeField]
+		m_retreatTimer = m_retreatTime;
+
+		isRetreating = true;
+	}
+
 	private void Retreating()
 	{
 		if (!isRetreating) return;
-		if (m_timer < 1)
+		if (m_retreatTimer > 0)
 		{
 			gameObject.transform.localScale -= m_scaleAmount * m_rootTimescale;
+			m_retreatTimer -= Time.deltaTime;
 		}
 		else
 		{
-			m_timer = 0;
 			isRetreating = false;
 		}
 	}
