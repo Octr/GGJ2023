@@ -32,7 +32,7 @@ public class WeaponBonus : ScriptableObject
 	[Tooltip("Salvo Reload is the time between projectile bursts ")]
 	[Range(1f,10f)]public float SalvoReloadMAX = 1;
 	[Tooltip("Shot Reload is the time between a projectile being fired")]
-	public float ShotReloadMAX = 1; // Note that should be decreasing
+	public float ShotReloadMAX = 10f; // Note that should be decreasing
 	[Range(1f,10f)]public float CalculatedRateOfFireMAX= 1;
 	//Accuracy
 	[Tooltip("The angle that the projectile does not shoot accurately")]
@@ -47,7 +47,7 @@ public class WeaponBonus : ScriptableObject
 	[Header("Minimum Values")]
 	[Range(0.1f,10f)]public float SalvoLengthMIN =1;
 	[Range(0.1f,10f)]public float SalvoReloadMUN = 1;
-	public float ShotReloadMIN = 1;
+	public float ShotReloadMIN = -10f;
 	[Range(0.1f,10f)]public float CalculatedRateOfFireMIN= 1;
 	//Accuracy
 	[Range(1f,10f)]public float DispersionAngleMIN = 1f;
@@ -56,13 +56,14 @@ public class WeaponBonus : ScriptableObject
 	[Tooltip("Salvo Length, is the number of projecticles fired in series ")]
 	[Range(0.1f,10f)]public float DamageMIN =0.1f;
 
-	[Header("Powerup additive values")] 
-	[Tooltip("The additive value multiplier of Damage")]
-	[Range(0.1f,5f)]public float PowerUpDamage = 0.1f;
+	[Header("Powerup additive values")] [Tooltip("The additive value multiplier of Damage")] [Range(0.1f, 5f)]
+	public float PowerUpDamage;
+
 	[Tooltip("The additive value multiplier of Rate of Fire ")]
-	public float PowerUpRateOfFire = 0.1f;
-	[Tooltip("The additive value multiplier of Velocity")]
-	[Range(0.1f,5f)]public float PowerUpVelocity = 0.1f;
+	public float PowerUpRateOfFire;
+
+	[Tooltip("The additive value multiplier of Velocity")] [Range(0.1f, 5f)]
+	public float PowerUpVelocity;
 
 
 	public float SetAndCheckMultiplier(float sourceValue, float changeValue, float min, float max)

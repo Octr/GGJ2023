@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e6a979d4a29c84c8c8c92b749bc492, type: 3}
   m_Name: WeaponBonus
   m_EditorClassIdentifier: 
-  SalvoLengthX: 1
+  SalvoLengthX: 0
   SalvoReloadX: 1
   ShotReloadX: 1
   CalculatedRateOfFireX: 1
@@ -34,5 +34,5 @@ MonoBehaviour:
   ProjectileSpeedMIN: 1
   DamageMIN: 0.1
   PowerUpDamage: 1
-  PowerUpRateOfFire: -0.1
-  PowerUpVelocity: 0.31
+  PowerUpRateOfFire: -0.01
+  PowerUpVelocity: 4
