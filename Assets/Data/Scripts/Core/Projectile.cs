@@ -10,6 +10,7 @@ public class Projectile : MonoBehaviour
     public float speed;
     public float damage;
 
+    public GameObject hitmarker;
 
     public bool isPlayerProjectile;
     // Start is called before the first frame update
@@ -35,6 +36,8 @@ public class Projectile : MonoBehaviour
             (other.tag == "Enemy" && isPlayerProjectile))
         {
             other.GetComponent<GenericCharacterMovementScript>().TakeDamage(damage);
+            GameObject newHitmarker = Instantiate(hitmarker);
+            newHitmarker.transform.position = transform.position;
             Destroy(gameObject);
         }
     }
