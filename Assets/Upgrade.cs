@@ -9,7 +9,7 @@ public enum UpgradeTypeEnum
     timeBetweenBursts,
     damage,
     projectileVelocity,
-    inaccuracy,
+    accuracy,
     projectileSize,
     burstFireSpeed,
 }

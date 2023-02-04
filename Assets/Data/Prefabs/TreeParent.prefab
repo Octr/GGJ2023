@@ -301,6 +301,24 @@ MonoBehaviour:
   playerAtTree: 0
   upgradeCanvas: {fileID: 8417548035663642231}
   m_WeaponMultiplierSource: {fileID: 11400000, guid: 14ae2e34fec9fe4439c9aa741040ccd6, type: 2}
+  currentProjectileSizeModifier: 0.5
+  maxProjectileSize: 10
+  minProjectileSize: 0.5
+  currentProjectileSpeedModifier: 0.5
+  maxProjectileSpeed: 50
+  minProjectileSpeed: 0.01
+  currentTimeBetweenBurstsModifier: 0.5
+  maxTimeBetweenBursts: 0.01
+  minTimeBetweenBursts: 3
+  currentDamageModifier: 0.5
+  maxDamage: 5
+  minDamage: 0.1
+  currentAccuracyModifier: 0.6
+  maxAccuracy: 0
+  minAccuracy: 60
+  currentBurstFireRate: 0.5
+  maxBurstFireRate: 0
+  minBurstFireRate: 0.8
 --- !u!1 &7469877262982299152
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,11 +664,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4893861395849156630, guid: ce0a0b67836234241ab8d41dc1e0720b, type: 3}
       propertyPath: m_fontSize
-      value: 11.92
+      value: 15.71
       objectReference: {fileID: 0}
     - target: {fileID: 4893861395849156630, guid: ce0a0b67836234241ab8d41dc1e0720b, type: 3}
       propertyPath: m_fontSizeBase
-      value: 11.92
+      value: 15.71
       objectReference: {fileID: 0}
     - target: {fileID: 4956993719630788028, guid: ce0a0b67836234241ab8d41dc1e0720b, type: 3}
       propertyPath: m_Pivot.x

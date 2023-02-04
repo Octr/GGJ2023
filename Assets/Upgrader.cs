@@ -13,9 +13,39 @@ public class Upgrader : MonoBehaviour
     public GameObject upgradeCanvas;
 
     public WeaponBonus m_WeaponMultiplierSource;
-    
+
+    public float currentProjectileSizeModifier = 0.5f;
+    public float maxProjectileSize;
+    public float minProjectileSize;
+
+    public float currentProjectileSpeedModifier = 0.5f;
+    public float maxProjectileSpeed;
+    public float minProjectileSpeed;
+
+    public float currentTimeBetweenBurstsModifier = 0.5f;
+    public float maxTimeBetweenBursts;
+    public float minTimeBetweenBursts;
+
+    public float currentDamageModifier = 0.5f;
+    public float maxDamage;
+    public float minDamage;
+
+    public float currentAccuracyModifier = 0.5f;
+    public float maxAccuracy;
+    public float minAccuracy;
+
+    public float currentBurstFireRate = 0.5f;
+    public float maxBurstFireRate;
+    public float minBurstFireRate;
+
     public void Start()
     {
+        PlayerMovementScript.instance.projectileSize = Mathf.Lerp(minProjectileSize, maxProjectileSize, currentProjectileSizeModifier);
+        PlayerMovementScript.instance.projectileSpeed = Mathf.Lerp(minProjectileSpeed, maxProjectileSpeed, currentProjectileSpeedModifier);
+        PlayerMovementScript.instance.timeBetweenBursts = Mathf.Lerp(minTimeBetweenBursts, maxTimeBetweenBursts, currentTimeBetweenBurstsModifier);
+        PlayerMovementScript.instance.projectileDamage = Mathf.Lerp(minDamage, maxDamage, currentDamageModifier);
+        PlayerMovementScript.instance.inaccuracy = Mathf.Lerp(minAccuracy, maxAccuracy, currentAccuracyModifier);
+        PlayerMovementScript.instance.burstFireSpeed = Mathf.Lerp(minBurstFireRate, maxBurstFireRate, currentBurstFireRate);
         WaveEnded();
         canUpgrade = true; // start on true because no enemies 
         WaveManager.OnWaveStatusChange += OnWaveStatusUpdate;
@@ -77,17 +107,29 @@ public class Upgrader : MonoBehaviour
 
         switch (proUpgradeType)
         {
-            case UpgradeTypeEnum.timeBetweenBursts:
-                PlayerMovementScript.instance.timeBetweenBursts = m_WeaponMultiplierSource.ChangeTimeBetweenBurstsMultiplier(m_WeaponMultiplierSource.PowerUpTimeBetweenBursts); //should be set to a variable
-                break;
-            case UpgradeTypeEnum.damage:
-                PlayerMovementScript.instance.projectileDamage = m_WeaponMultiplierSource.ChangeDamageMultiplier(m_WeaponMultiplierSource.PowerUpDamage);
+            case UpgradeTypeEnum.projectileSize:
+                currentProjectileSizeModifier += 0.2f;
+                PlayerMovementScript.instance.projectileSize = Mathf.Lerp(minProjectileSize, maxProjectileSize, currentProjectileSizeModifier);
                 break;
             case UpgradeTypeEnum.projectileVelocity:
-                PlayerMovementScript.instance.projectileSpeed = m_WeaponMultiplierSource.ChangeVelocityMultiplier(m_WeaponMultiplierSource.PowerUpVelocity);
+                currentProjectileSpeedModifier += 0.2f;
+                PlayerMovementScript.instance.projectileSpeed = Mathf.Lerp(minProjectileSpeed, maxProjectileSpeed, currentProjectileSpeedModifier);
                 break;
-            case UpgradeTypeEnum.projectileSize:
-                PlayerMovementScript.instance.projectileSize = m_WeaponMultiplierSource.ChangeSizeMultiplier(m_WeaponMultiplierSource.PowerUpSize);
+            case UpgradeTypeEnum.timeBetweenBursts:
+                currentTimeBetweenBurstsModifier += 0.2f;
+                PlayerMovementScript.instance.timeBetweenBursts = Mathf.Lerp(minTimeBetweenBursts, maxTimeBetweenBursts, currentTimeBetweenBurstsModifier);
+                break;
+            case UpgradeTypeEnum.damage:
+                currentDamageModifier += 0.2f;
+                PlayerMovementScript.instance.projectileDamage = Mathf.Lerp(minDamage, maxDamage, currentDamageModifier);
+                break;
+            case UpgradeTypeEnum.accuracy:
+                currentAccuracyModifier += 0.2f;
+                PlayerMovementScript.instance.inaccuracy = Mathf.Lerp(minAccuracy, maxAccuracy, currentAccuracyModifier);
+                break;
+            case UpgradeTypeEnum.burstFireSpeed:
+                currentBurstFireRate += 0.2f;
+                PlayerMovementScript.instance.burstFireSpeed = Mathf.Lerp(minBurstFireRate, maxBurstFireRate, currentBurstFireRate);
                 break;
             default:
                 break;
@@ -95,17 +137,29 @@ public class Upgrader : MonoBehaviour
 
         switch (conUpgradeType)
         {
-            case UpgradeTypeEnum.timeBetweenBursts:
-                PlayerMovementScript.instance.timeBetweenBursts = m_WeaponMultiplierSource.ChangeTimeBetweenBurstsMultiplier(m_WeaponMultiplierSource.PowerDownTimeBetweenBursts); //should be set to a variable
-                break;
-            case UpgradeTypeEnum.damage:
-                PlayerMovementScript.instance.projectileDamage = m_WeaponMultiplierSource.ChangeDamageMultiplier(m_WeaponMultiplierSource.PowerDownDamage);
+            case UpgradeTypeEnum.projectileSize:
+                currentProjectileSizeModifier -= 0.1f;
+                PlayerMovementScript.instance.projectileSize = Mathf.Lerp(minProjectileSize, maxProjectileSize, currentProjectileSizeModifier);
                 break;
             case UpgradeTypeEnum.projectileVelocity:
-                PlayerMovementScript.instance.projectileSpeed = m_WeaponMultiplierSource.ChangeVelocityMultiplier(m_WeaponMultiplierSource.PowerDownVelocity);
+                currentProjectileSpeedModifier -= 0.1f;
+                PlayerMovementScript.instance.projectileSpeed = Mathf.Lerp(minProjectileSpeed, maxProjectileSpeed, currentProjectileSpeedModifier);
                 break;
-            case UpgradeTypeEnum.projectileSize:
-                PlayerMovementScript.instance.projectileSize = m_WeaponMultiplierSource.ChangeSizeMultiplier(m_WeaponMultiplierSource.PowerDownSize);
+            case UpgradeTypeEnum.timeBetweenBursts:
+                currentTimeBetweenBurstsModifier -= 0.1f;
+                PlayerMovementScript.instance.timeBetweenBursts = Mathf.Lerp(minTimeBetweenBursts, maxTimeBetweenBursts, currentTimeBetweenBurstsModifier);
+                break;
+            case UpgradeTypeEnum.damage:
+                currentDamageModifier -= 0.1f;
+                PlayerMovementScript.instance.projectileDamage = Mathf.Lerp(minDamage, maxDamage, currentDamageModifier);
+                break;
+            case UpgradeTypeEnum.accuracy:
+                currentAccuracyModifier -= 0.1f;
+                PlayerMovementScript.instance.inaccuracy = Mathf.Lerp(minAccuracy, maxAccuracy, currentAccuracyModifier);
+                break;
+            case UpgradeTypeEnum.burstFireSpeed:
+                currentBurstFireRate -= 0.1f;
+                PlayerMovementScript.instance.burstFireSpeed = Mathf.Lerp(minBurstFireRate, maxBurstFireRate, currentBurstFireRate);
                 break;
             default:
                 break;
