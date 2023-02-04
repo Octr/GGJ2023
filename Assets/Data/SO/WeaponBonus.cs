@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "GameJam/Create WeaponBonus", fileName = "WeaponBonus", order = 0)]
