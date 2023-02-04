@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RootManager : MonoBehaviour
+public class RootManager : SingletonParent<RootManager>
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	[SerializeField] private float m_rootPercentage;
+	[SerializeField] private float m_rootTimescale;
+	[SerializeField] private Sprite m_rootSprite;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	private void Update()
+	{
+		
+	}
+
+	private void OnValidate()
+	{
+		m_rootSprite = gameObject.GetComponent<Sprite>();
+	}
 }
