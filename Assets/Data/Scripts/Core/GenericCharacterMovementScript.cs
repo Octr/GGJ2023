@@ -23,7 +23,18 @@ public class GenericCharacterMovementScript : MonoBehaviour
     public float moveX;
     public float moveY;
 
-    public bool firing; 
+    public float projectileSpeed;
+    public float projectileDamage;
+
+    public bool firing;
+
+    public float health = 100;
+
+    public bool isPlayer;
+
+    public Transform shootingPos;
+
+    public float yMovementPerspectiveMultiplier;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +54,22 @@ public class GenericCharacterMovementScript : MonoBehaviour
 
     }
 
+    public void TakeDamage(float newDamage)
+    {
+        health -= newDamage;
+        if (health <= 0)
+        {
+            Death();
+            if (!isPlayer)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                gameObject.SetActive(false);
+            }
+        }
+    }
     public virtual void Move()
     {
         Vector3 newMovementVelocity = new Vector3(moveX, 0, moveY);
@@ -50,6 +77,7 @@ public class GenericCharacterMovementScript : MonoBehaviour
         {
             newMovementVelocity.Normalize();
         }
+        newMovementVelocity.z *= yMovementPerspectiveMultiplier;
         movementRBody.velocity = newMovementVelocity * speed * Time.deltaTime;
     }
 
@@ -57,7 +85,10 @@ public class GenericCharacterMovementScript : MonoBehaviour
     {
 
     }
+    public virtual void Death()
+    {
 
+    }
     public void Update()
     {
         Look();
@@ -83,8 +114,12 @@ public class GenericCharacterMovementScript : MonoBehaviour
             if (salvoTimer < 0)
             {
                 GameObject newProjectile = Instantiate(projectileToShoot);
-                newProjectile.transform.position = transform.position;
-                newProjectile.GetComponent<Projectile>().movementDirection = shootingDirection.forward.normalized;
+                newProjectile.transform.position = shootingPos.position;
+                Projectile newProjectileScript = newProjectile.GetComponent<Projectile>();
+                newProjectileScript.movementDirection = shootingDirection.forward.normalized;
+                newProjectileScript.speed = projectileSpeed;
+                newProjectileScript.damage = projectileDamage;
+                newProjectileScript.isPlayerProjectile = isPlayer;
                 salvoTimer = salvoTime;
                 numberFiredSoFarInSalvo += 1;
                 if (numberFiredSoFarInSalvo >= numberPerSalvo)
