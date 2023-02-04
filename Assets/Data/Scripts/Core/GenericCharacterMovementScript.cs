@@ -59,7 +59,15 @@ public class GenericCharacterMovementScript : MonoBehaviour
         health -= newDamage;
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Death();
+            if (!isPlayer)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
     public virtual void Move()
@@ -77,7 +85,10 @@ public class GenericCharacterMovementScript : MonoBehaviour
     {
 
     }
+    public virtual void Death()
+    {
 
+    }
     public void Update()
     {
         Look();
