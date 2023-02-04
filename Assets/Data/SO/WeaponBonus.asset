@@ -18,15 +18,21 @@ MonoBehaviour:
   CalculatedRateOfFireX: 1
   DispersionAngleX: 1
   ProjectileSpeedX: 1
+  Damage: 1
   SalvoLengthMAX: 10
   SalvoReloadMAX: 9.47
-  ShotReloadMAX: 8.4
+  ShotReloadMAX: 0.01
   CalculatedRateOfFireMAX: 10
   DispersionAngleMAX: 10
   ProjectileSpeedMAX: 10
+  DamageMAX: 10
   SalvoLengthMIN: 5.48
   SalvoReloadMUN: 2.07
   ShotReloadMIN: 1
   CalculatedRateOfFireMIN: 0.67
   DispersionAngleMIN: 1
   ProjectileSpeedMIN: 1
+  DamageMIN: 0.1
+  PowerUpDamage: 1
+  PowerUpRateOfFire: -0.1
+  PowerUpVelocity: 0.31

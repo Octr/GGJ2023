@@ -24,6 +24,9 @@ public class WeaponModifier : MonoBehaviour
 	//Other
 	public float m_projectileSpeed =1; 
 	
+	//The Global Asset modifier
+	
+	
 
 	//numPerSalvo = SalvoLength
 	//salvoTime = shotReload

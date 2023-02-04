@@ -7,6 +7,9 @@ public class RootManager : SingletonParent<RootManager>
 	[SerializeField] private float m_rootTimescale;
 	[SerializeField] private Vector3 m_minimumScale;
 
+	// when WaveIsActive, roots are active
+	private bool m_rootGrowthActive => WaveManager.Instance.WaveIsActive;
+
 	private float m_timer;
 
 	private bool m_playerIsInTheRoots;
@@ -15,12 +18,15 @@ public class RootManager : SingletonParent<RootManager>
 	[SerializeField] float m_damageTime;
 
 	public GameObject hitmarker;
-
+	
 	private void Update()
 	{
 		m_timer += Time.deltaTime;
-		
-		Closing();
+
+		if (m_rootGrowthActive) // roots only closing in during an enemy wave 
+		{
+			Closing();
+		}
 
 		if (m_playerIsInTheRoots)
         {
@@ -34,10 +40,8 @@ public class RootManager : SingletonParent<RootManager>
 					newHitmarker.transform.position = PlayerMovementScript.instance.transform.position;
 					m_damageTimer = 0;
 				}
-				
 			}
-
-		}
+        }
 	}
 
 	private void Closing()
@@ -64,8 +68,6 @@ public class RootManager : SingletonParent<RootManager>
 		{
 			m_timer = 0;
 		}
-		
-		
 	}
 
 	private void Retreating()
