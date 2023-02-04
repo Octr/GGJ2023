@@ -16,6 +16,7 @@ public class Upgrader : MonoBehaviour
     
     public void Start()
     {
+        WaveEnded();
         canUpgrade = true; // start on true because no enemies 
         WaveManager.OnWaveStatusChange += OnWaveStatusUpdate;
     }
@@ -81,7 +82,7 @@ public class Upgrader : MonoBehaviour
                 PlayerMovementScript.instance.projectileDamage=  m_WeaponMultiplierSource.ChangeDamageMultiplier(m_WeaponMultiplierSource.PowerUpDamage);
                 break;
             case UpgradeTypeEnum.projectileVelocity:
-                PlayerMovementScript.instance.speed = m_WeaponMultiplierSource.ChangeVelocityMultiplier(m_WeaponMultiplierSource.PowerUpVelocity);
+                PlayerMovementScript.instance.projectileSpeed = m_WeaponMultiplierSource.ChangeVelocityMultiplier(m_WeaponMultiplierSource.PowerUpVelocity);
                 break;
             default:
                 break;
