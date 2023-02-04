@@ -15,6 +15,8 @@ public class WaveManager : SingletonParent<WaveManager>
     /// 5. 👌 be able to notify others when there is an active wave - via public variable, not event yet 
     /// </summary>
 
+    public static event Action<bool> OnWaveStatusChange = (waveIsActive) => {};
+    
     [Header("Enemy Data")]
     [SerializeField] private GameObject[] m_enemies;
     [SerializeField] private int m_enemySpawnCount = 2;
@@ -29,7 +31,7 @@ public class WaveManager : SingletonParent<WaveManager>
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
         EnemyMovement.OnEnemyDied += OnEnemyDied;
-        TestUI.OnPowerUpSelected += OnPowerUpSelected;
+        Upgrader.OnPowerUpSelected += OnPowerUpSelected;
         
         // always start scene with no enemies 
         GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
@@ -44,7 +46,7 @@ public class WaveManager : SingletonParent<WaveManager>
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
         EnemyMovement.OnEnemyDied -= OnEnemyDied;
-        TestUI.OnPowerUpSelected -= OnPowerUpSelected;   
+        Upgrader.OnPowerUpSelected -= OnPowerUpSelected;   
     }
     
     // going to reset all our variables when scene reloads (or when level lost)
@@ -69,6 +71,7 @@ public class WaveManager : SingletonParent<WaveManager>
 
     private void CreateWave()
     {
+        OnWaveStatusChange.Invoke(true);
         m_waveIsActive = true;
         for (int i = 0; i < m_enemySpawnCount; i++)
         {
@@ -97,6 +100,7 @@ public class WaveManager : SingletonParent<WaveManager>
 
     private void OnWaveDefeated()
     {
+        OnWaveStatusChange.Invoke(false);
         m_waveIsActive = false;
         m_wavesDefeated++;
         // probably going to be other stuff such as creating downtime and allowing power upgrades 
@@ -104,7 +108,6 @@ public class WaveManager : SingletonParent<WaveManager>
 
     private void OnGUI()
     {
-        GUILayout.Space(20);
         GUI.color = Color.red;
         GUILayout.Label($"Waves defeated : {m_wavesDefeated}");
     }
