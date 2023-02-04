@@ -5,6 +5,8 @@ using System;
 
 public class Upgrader : MonoBehaviour
 {
+    public static event Action OnPowerUpSelected = () => {}; // WaveManager subbed 
+    
     public Upgrade[] upgrades;
     public bool canUpgrade;
     public bool playerAtTree;
@@ -12,16 +14,26 @@ public class Upgrader : MonoBehaviour
 
     public WeaponBonus m_WeaponMultiplierSource;
     
-    
-    
-    
-    
-    // Start is called before the first frame update
-
     public void Start()
     {
-        WaveEnded();
+        canUpgrade = true; // start on true because no enemies 
+        WaveManager.OnWaveStatusChange += OnWaveStatusUpdate;
     }
+    
+    private void OnDisable()
+    {
+        WaveManager.OnWaveStatusChange -= OnWaveStatusUpdate;
+    }
+
+    private void OnWaveStatusUpdate(bool waveIsActive)
+    {
+        if (!waveIsActive)
+        {
+            canUpgrade = true;
+            WaveEnded();
+        }
+    }
+    
     public void Update()
     {
         if (canUpgrade && playerAtTree)
@@ -58,7 +70,7 @@ public class Upgrader : MonoBehaviour
     public void TriggerUpgrade(UpgradeTypeEnum upgradeType)
     {
         upgradeCanvas.SetActive(false);
-        
+        OnPowerUpSelected.Invoke();
         //Joe Addition
         switch (upgradeType)
         {
@@ -74,7 +86,6 @@ public class Upgrader : MonoBehaviour
             default:
                 break;
         }
-        
         
         Debug.Log("Upgrade");
     }
