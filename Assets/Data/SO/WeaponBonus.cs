@@ -6,6 +6,14 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "GameJam/Create WeaponBonus", fileName = "WeaponBonus", order = 0)]
 public class WeaponBonus : ScriptableObject
 {
+	
+	[Header("Powerup additive values")] [Tooltip("The additive value multiplier of Damage")] [Range(0.1f, 5f)]
+	public float PowerUpDamage;
+	[Tooltip("The additive value multiplier of Rate of Fire ")]
+	public float PowerUpRateOfFire;
+	[Tooltip("The additive value multiplier of Velocity")] [Range(0.1f, 5f)]
+	public float PowerUpVelocity;
+	
 	[Header("Bonus % Values (setting to 0= no bonus/nerf)")]
 	[Tooltip("Salvo Length, is the number of projecticles fired in series ")]
 	public float SalvoLengthX =1;
@@ -56,14 +64,6 @@ public class WeaponBonus : ScriptableObject
 	[Tooltip("Salvo Length, is the number of projecticles fired in series ")]
 	[Range(0.1f,10f)]public float DamageMIN =0.1f;
 
-	[Header("Powerup additive values")] [Tooltip("The additive value multiplier of Damage")] [Range(0.1f, 5f)]
-	public float PowerUpDamage;
-
-	[Tooltip("The additive value multiplier of Rate of Fire ")]
-	public float PowerUpRateOfFire;
-
-	[Tooltip("The additive value multiplier of Velocity")] [Range(0.1f, 5f)]
-	public float PowerUpVelocity;
 
 
 	public float SetAndCheckMultiplier(float sourceValue, float changeValue, float min, float max)
