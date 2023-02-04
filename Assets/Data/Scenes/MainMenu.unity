@@ -381,7 +381,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1583346868647196838, guid: 7115638cb2512cd47bdc29e6b64322be, type: 3}
       propertyPath: m_Type
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1583346868647196838, guid: 7115638cb2512cd47bdc29e6b64322be, type: 3}
       propertyPath: m_Sprite
@@ -391,9 +391,13 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1583346868647196838, guid: 7115638cb2512cd47bdc29e6b64322be, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 1583346868647196839, guid: 7115638cb2512cd47bdc29e6b64322be, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1920
+      value: 1973.49
       objectReference: {fileID: 0}
     - target: {fileID: 1583346868647196839, guid: 7115638cb2512cd47bdc29e6b64322be, type: 3}
       propertyPath: m_SizeDelta.y
@@ -402,6 +406,10 @@ PrefabInstance:
     - target: {fileID: 1583346868647196839, guid: 7115638cb2512cd47bdc29e6b64322be, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.80501
+      objectReference: {fileID: 0}
+    - target: {fileID: 1583346868647196839, guid: 7115638cb2512cd47bdc29e6b64322be, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1583346868682018393, guid: 7115638cb2512cd47bdc29e6b64322be, type: 3}
       propertyPath: m_AnchorMax.y
