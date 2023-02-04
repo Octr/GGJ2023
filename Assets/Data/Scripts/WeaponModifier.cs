@@ -1,30 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WeaponModifier : MonoBehaviour
 {
-	/*
-	 * RateOfFire=60* A / ((A - 1) * B + C)
-		Example of a single shot firing mode at a rate of fire of 20 rounds per minute. 
-		- A: Primary: Salvo length (#) : 1
-		- B: Primary: Salvo reload (s) : 1s
-		- C: Primary: Shot reload (s): 3s
-		- Rate of Fire (RPM) =  20 = 60*1 / ((1-1)x1+3) 
-	 */
-
 	
-	//RoF
+	//Script References
+	[SerializeField] public PlayerMovementScript m_playerMovementScript;
+	[SerializeField] public WeaponBonus m_weaponBonus;
+	//Rate of fire settings
 	[SerializeField] private int m_salvoLength =1;
 	[SerializeField] private float m_salvoReload = 1;
 	[SerializeField] private float m_shotReload = 1;
 	[SerializeField] private float m_calculatedRateOfFire;
 	//Accuracy
-	[SerializeField] private float m_dispersionAngle = 10f;
+	[SerializeField] private float m_dispersionAngle = 1f;
 	//Other
 	[SerializeField] private float m_projectileSpeed =1; 
 	
-	//Note: when doing multipl
 
 	private float CalculateRateOfFire(int salvoLength, float salvoReload, float shotReload)
 	{
@@ -33,9 +27,27 @@ public class WeaponModifier : MonoBehaviour
 		return rateOfFire;
 	}
 
+
+	public void AdditiveWeaponMultiplier()
+	{
+		
+	}
+
+
+	public void SetWeaponBonusToPlayer()
+	{
+		m_playerMovementScript.numberPerSalvo = (int) (m_playerMovementScript.numberPerSalvo *m_weaponBonus.SalvoLengthX); //SalvoLength
+		m_playerMovementScript.salvoTime = m_playerMovementScript.salvoTime * m_weaponBonus.SalvoReloadX;
+		m_playerMovementScript.rateOfFire = m_playerMovementScript.rateOfFire * m_weaponBonus.CalculatedRateOfFireX; //RoF / Shot Length
+	}
+	
 	private void Start()
 	{
-		float testValue;
-		Debug.Log($"Test RoF is:{CalculateRateOfFire(m_salvoLength,m_salvoReload,m_salvoReload)}");
+		SetWeaponBonusToPlayer();
+	}
+
+	private void Update()
+	{
+		SetWeaponBonusToPlayer();
 	}
 }
