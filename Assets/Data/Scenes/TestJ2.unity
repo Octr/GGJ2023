@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33b13f1d3224808499c7a6072666d7db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_playerMovementScript: {fileID: 352007804}
+  m_pms: {fileID: 352007804}
   m_weaponBonus: {fileID: 11400000, guid: 14ae2e34fec9fe4439c9aa741040ccd6, type: 2}
   m_numPerSalvo: 1
   m_salvoReload: 1
@@ -2063,6 +2063,9 @@ MonoBehaviour:
   m_scaleAmount: {x: -0.01, y: -0.01, z: 0}
   m_rootTimescale: 0.1
   m_minimumScale: {x: 0.1, y: 0.1, z: 0}
+  m_damageToPlayer: 0
+  m_damageTime: 0
+  hitmarker: {fileID: 0}
 --- !u!135 &2008732973
 SphereCollider:
   m_ObjectHideFlags: 0

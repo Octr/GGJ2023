@@ -42,3 +42,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Hitmarker
+    uniqueID: 2557157099
+    locked: 0

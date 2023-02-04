@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "GamJam/Create WeaponBonus", fileName = "WeaponBonus", order = 0)]
+[CreateAssetMenu(menuName = "GameJam/Create WeaponBonus", fileName = "WeaponBonus", order = 0)]
 public class WeaponBonus : ScriptableObject
 {
 	[Header("Bonus % Values (setting to 0= no bonus/nerf)")]
