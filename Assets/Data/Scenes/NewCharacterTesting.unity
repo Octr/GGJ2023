@@ -1382,6 +1382,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5823946138339525583, guid: 9e1f0894ecfcc7149acd96a3888d4f85, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 5823946138339525583, guid: 9e1f0894ecfcc7149acd96a3888d4f85, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 5823946138339525583, guid: 9e1f0894ecfcc7149acd96a3888d4f85, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2052798
+      objectReference: {fileID: 0}
+    - target: {fileID: 6425509912354082634, guid: 9e1f0894ecfcc7149acd96a3888d4f85, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 15bf78c933300634580211ed8cf2fd8e, type: 2}
     - target: {fileID: 7170939432180497315, guid: 9e1f0894ecfcc7149acd96a3888d4f85, type: 3}
       propertyPath: m_Name
       value: TreeParent
