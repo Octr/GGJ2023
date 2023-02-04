@@ -34,6 +34,8 @@ public class GenericCharacterMovementScript : MonoBehaviour
 
     public Transform shootingPos;
 
+    public float yMovementPerspectiveMultiplier;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -67,6 +69,7 @@ public class GenericCharacterMovementScript : MonoBehaviour
         {
             newMovementVelocity.Normalize();
         }
+        newMovementVelocity.z *= yMovementPerspectiveMultiplier;
         movementRBody.velocity = newMovementVelocity * speed * Time.deltaTime;
     }
 

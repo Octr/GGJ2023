@@ -132,15 +132,16 @@ MonoBehaviour:
   firing: 0
   health: 5
   isPlayer: 0
-  shootingPos: {fileID: 7147837273183229914}
+  shootingPos: {fileID: 5518107316356761211}
+  yMovementPerspectiveMultiplier: 2
   agent: {fileID: 2027117375}
 --- !u!54 &4567392608706414702 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 8962695063245075176, guid: 0fa3e48c5ef7d4544922412ca261f681, type: 3}
   m_PrefabInstance: {fileID: 4828774472895855238}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &7147837273183229914 stripped
+--- !u!4 &5518107316356761211 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 2319768244942826844, guid: 0fa3e48c5ef7d4544922412ca261f681, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1123368361355623677, guid: 0fa3e48c5ef7d4544922412ca261f681, type: 3}
   m_PrefabInstance: {fileID: 4828774472895855238}
   m_PrefabAsset: {fileID: 0}
