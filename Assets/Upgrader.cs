@@ -75,13 +75,13 @@ public class Upgrader : MonoBehaviour
         switch (upgradeType)
         {
             case UpgradeTypeEnum.rateOfFire:
-                m_WeaponMultiplierSource.ChangeRateOfFireMultiplier(m_WeaponMultiplierSource.PowerUpRateOfFire); //should be set to a variable
+                PlayerMovementScript.instance.rateOfFire =  m_WeaponMultiplierSource.ChangeRateOfFireMultiplier(m_WeaponMultiplierSource.PowerUpRateOfFire); //should be set to a variable
                 break;
             case UpgradeTypeEnum.damage:
-                m_WeaponMultiplierSource.ChangeDamageMultiplier(m_WeaponMultiplierSource.PowerUpDamage);
+                PlayerMovementScript.instance.projectileDamage=  m_WeaponMultiplierSource.ChangeDamageMultiplier(m_WeaponMultiplierSource.PowerUpDamage);
                 break;
             case UpgradeTypeEnum.projectileVelocity:
-                m_WeaponMultiplierSource.ChangeVelocityMultiplier(m_WeaponMultiplierSource.PowerUpVelocity);
+                PlayerMovementScript.instance.speed = m_WeaponMultiplierSource.ChangeVelocityMultiplier(m_WeaponMultiplierSource.PowerUpVelocity);
                 break;
             default:
                 break;
