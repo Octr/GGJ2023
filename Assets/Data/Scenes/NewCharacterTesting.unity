@@ -1187,12 +1187,20 @@ PrefabInstance:
       value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8962695063245075179, guid: 0fa3e48c5ef7d4544922412ca261f681, type: 3}
+      propertyPath: inaccuracy
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962695063245075179, guid: 0fa3e48c5ef7d4544922412ca261f681, type: 3}
       propertyPath: rateOfFire
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8962695063245075179, guid: 0fa3e48c5ef7d4544922412ca261f681, type: 3}
       propertyPath: salvoTimer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962695063245075179, guid: 0fa3e48c5ef7d4544922412ca261f681, type: 3}
+      propertyPath: projectileSize
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fa3e48c5ef7d4544922412ca261f681, type: 3}
@@ -1381,18 +1389,6 @@ PrefabInstance:
     - target: {fileID: 1825948185027043056, guid: 9e1f0894ecfcc7149acd96a3888d4f85, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5823946138339525583, guid: 9e1f0894ecfcc7149acd96a3888d4f85, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.44
-      objectReference: {fileID: 0}
-    - target: {fileID: 5823946138339525583, guid: 9e1f0894ecfcc7149acd96a3888d4f85, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 5823946138339525583, guid: 9e1f0894ecfcc7149acd96a3888d4f85, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.78
       objectReference: {fileID: 0}
     - target: {fileID: 7170939432180497315, guid: 9e1f0894ecfcc7149acd96a3888d4f85, type: 3}
       propertyPath: m_Name

@@ -166,6 +166,8 @@ MonoBehaviour:
   moveY: 0
   projectileSpeed: 5
   projectileDamage: 1
+  projectileSize: 1
+  inaccuracy: 0
   firing: 0
   health: 5
   isPlayer: 0
