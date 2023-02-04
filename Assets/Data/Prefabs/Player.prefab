@@ -654,9 +654,9 @@ MonoBehaviour:
   shootingDirection: {fileID: 8962695062543708506}
   projectileToShoot: {fileID: 8302166367347694412, guid: e256fd15de538474db3fb47393c0bb36, type: 3}
   fireTimer: 0
-  rateOfFire: 0.3
+  rateOfFire: 0.5
   salvoTimer: 0
-  salvoTime: 0.1
+  salvoTime: 0.2
   numberPerSalvo: 5
   numberFiredSoFarInSalvo: 0
   firingSalvo: 0
@@ -664,6 +664,8 @@ MonoBehaviour:
   moveY: 0
   projectileSpeed: 5
   projectileDamage: 1
+  projectileSize: 3
+  inaccuracy: 20
   firing: 0
   health: 5
   isPlayer: 1
