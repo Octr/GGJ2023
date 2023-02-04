@@ -9,29 +9,35 @@ public class WaveManager : SingletonParent<WaveManager>
 {
     /// <summary>
     /// 1. 👌 keeps track of how many waves have been defeated
-    /// 2. 👌 create waves of enemies - enemy count increases with wave count - communitate with roots manager to find spawn point
+    /// 2. 👌 create waves of enemies - enemy count increases with wave count - rotating spawn points
     /// 3. 👌 notify enemies of how many waves have been defeated to scale their difficulty 
     /// 4. 👌 detect when waves are over - sub to OnDestroy event of enemies 
     /// 5. 👌 be able to notify others when there is an active wave - via public variable, not event yet 
     /// </summary>
 
     public static event Action<bool> OnWaveStatusChange = (waveIsActive) => {};
-    
+
     [Header("Enemy Data")]
     [SerializeField] private GameObject[] m_enemies;
     [SerializeField] private int m_enemySpawnCount = 2;
-    
+    [SerializeField] private Transform[] m_enemySpawnPoints;
+    private int m_nextSpawnPoint = 0;
+    private int m_maxSpawnPoint = 0;
+
     [Header("Enemy Wave Data")]
     [SerializeField] private int m_wavesDefeated = 0;
     public bool WaveIsActive => m_waveIsActive;
     private bool m_waveIsActive = false;
     private int m_activeEnemyCount = 0;
+    
 
     private void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
         EnemyMovement.OnEnemyDied += OnEnemyDied;
         Upgrader.OnPowerUpSelected += OnPowerUpSelected;
+
+        m_maxSpawnPoint = m_enemySpawnPoints.Length; // maxSpawnPoint = however many spawn points there are
         
         // always start scene with no enemies 
         GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
@@ -54,7 +60,8 @@ public class WaveManager : SingletonParent<WaveManager>
     {
         m_wavesDefeated = 0;
         m_enemySpawnCount = 1;
-        
+        m_nextSpawnPoint = 0;
+
         // always start scene with no enemies 
         GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
         for (int i = 0; i < gameObjects.Length; i++)
@@ -75,12 +82,19 @@ public class WaveManager : SingletonParent<WaveManager>
         m_waveIsActive = true;
         for (int i = 0; i < m_enemySpawnCount; i++)
         {
-            // going to need to communicate with RootsManager to get location to spawn enemies 
             // will also modify difficulty of enemies (or have enemies modify themselves with ref to m_wavesDefeated)
-            Instantiate(m_enemies[0]);
-            Debug.Log("Increase enemy difficulty sliders");
+            
+            // enemy will spawn at a spawnPoints
+            Instantiate(m_enemies[0], m_enemySpawnPoints[m_nextSpawnPoint]);
+            
+            // if next spawn point is same as max -1 bc arrays, reset to 0
+            if (m_nextSpawnPoint == m_maxSpawnPoint - 1)
+            {
+                m_nextSpawnPoint = -1;
+            }
+            m_nextSpawnPoint++;
         }
-        // active enemies same as spawned enemies at beginning 
+        Debug.Log("Increase enemy difficulty sliders");
         m_activeEnemyCount = m_enemySpawnCount;
         
         Debug.Log("Increase enemies that will spawn next time");
