@@ -314,12 +314,17 @@ MonoBehaviour:
   currentDamageModifier: 0.5
   maxDamage: 5
   minDamage: 0.1
-  currentAccuracyModifier: 0.6
+  currentAccuracyModifier: 0.8
   maxAccuracy: 0
   minAccuracy: 60
   currentBurstFireRate: 0.5
   maxBurstFireRate: 0
   minBurstFireRate: 0.8
+  pea: {fileID: 21300000, guid: e78e5482bb072b74c9ed1a1c2f24c27c, type: 3}
+  carrot: {fileID: 21300000, guid: 862469c8eec15354bbfcdd52b6f7e335, type: 3}
+  potato: {fileID: 21300000, guid: 62f7cd27918fa224387ebee31c078dd6, type: 3}
+  turnip: {fileID: 21300000, guid: 9afe1d776bab821469a5471b74b27ee5, type: 3}
+  pumpkin: {fileID: 21300000, guid: eac1eb2aa3b1524499fb5dc74fb275bb, type: 3}
 --- !u!114 &738931609
 MonoBehaviour:
   m_ObjectHideFlags: 0

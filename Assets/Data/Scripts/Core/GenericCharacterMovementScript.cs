@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GenericCharacterMovementScript : MonoBehaviour
 {
+    public Sprite currentProjectileSprite;
+
     public Rigidbody movementRBody;
     public float speed;
 
@@ -136,7 +138,7 @@ public class GenericCharacterMovementScript : MonoBehaviour
             {
                 GameObject newProjectile = Instantiate(projectileToShoot);
                 newProjectile.transform.position = shootingPos.position;
-                Projectile newProjectileScript = newProjectile.GetComponent<Projectile>();
+                Projectile newProjectileScript = newProjectile.transform.GetChild(0).GetComponent<Projectile>();
                 Vector3 shootingVector = shootingDirection.forward.normalized;
                 shootingVector = Quaternion.AngleAxis(Random.Range(-inaccuracy,inaccuracy), Vector3.up) * shootingVector;
 
@@ -145,6 +147,11 @@ public class GenericCharacterMovementScript : MonoBehaviour
                 newProjectileScript.damage = projectileDamage;
                 newProjectileScript.isPlayerProjectile = isPlayer;
                 newProjectile.transform.localScale *= projectileSize;
+
+                if (currentProjectileSprite != null)
+                {
+                    newProjectileScript.render.sprite = currentProjectileSprite;
+                }
 
                 salvoTimer = burstFireSpeed;
                 numberFiredSoFarInSalvo += 1;
