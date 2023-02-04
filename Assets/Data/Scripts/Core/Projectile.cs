@@ -25,7 +25,6 @@ public class Projectile : MonoBehaviour
         totalTime += Time.deltaTime;
         if (totalTime >= maxTime)
         {
-
             Destroy(gameObject);
         }
         transform.Translate(movementDirection*speed*Time.deltaTime);
