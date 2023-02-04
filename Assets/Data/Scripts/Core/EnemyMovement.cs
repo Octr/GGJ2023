@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyMovement : GenericCharacterMovementScript
 {
+    public static event Action OnEnemyDied = () => {}; // notify WaveManager
     public void Awake()
     {
         
     }
     public void Start()
     {
-        AIManager.instance.AddEnemy(this) ;
+        AIManager.instance.AddEnemy(this);
     }
 
     public NavMeshAgent agent;
@@ -50,6 +52,7 @@ public class EnemyMovement : GenericCharacterMovementScript
 
     public override void Death()
     {
+        OnEnemyDied.Invoke(); // notifies WaveManager of death
         AIManager.instance.RemoveEnemy(this);
     }
 }
