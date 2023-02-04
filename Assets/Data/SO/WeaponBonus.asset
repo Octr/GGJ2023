@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e6a979d4a29c84c8c8c92b749bc492, type: 3}
   m_Name: WeaponBonus
   m_EditorClassIdentifier: 
-  SalvoLengthX: 1
+  SalvoLengthX: 1.95
   SalvoReloadX: 1
   ShotReloadX: 1
   CalculatedRateOfFireX: 1
   DispersionAngleX: 1
   ProjectileSpeedX: 1
-  SalvoLengthMAX: 10
-  SalvoReloadMAX: 10
-  ShotReloadMAX: 10
+  SalvoLengthMAX: 9.42
+  SalvoReloadMAX: 9.47
+  ShotReloadMAX: 8.4
   CalculatedRateOfFireMAX: 10
   DispersionAngleMAX: 10
   ProjectileSpeedMAX: 10
-  SalvoLengthMIN: 1
+  SalvoLengthMIN: 3.36
   SalvoReloadMUN: 1
   ShotReloadMIN: 1
   CalculatedRateOfFireMIN: 1
