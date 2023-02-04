@@ -10,23 +10,41 @@ public class WeaponModifier : MonoBehaviour
 	[SerializeField] public PlayerMovementScript m_playerMovementScript;
 	[SerializeField] public WeaponBonus m_weaponBonus;
 	//Rate of fire settings
-	[SerializeField] private int m_salvoLength =1;
-	[SerializeField] private float m_salvoReload = 1;
-	[SerializeField] private float m_shotReload = 1;
-	[SerializeField] private float m_calculatedRateOfFire;
+	public int m_salvoLength =1;
+	public float m_salvoReload = 1;
+	public float m_shotReload = 1;
+	public float m_calculatedRateOfFire;
 	//Accuracy
-	[SerializeField] private float m_dispersionAngle = 1f;
+	public float m_dispersionAngle = 1f;
 	//Other
-	[SerializeField] private float m_projectileSpeed =1; 
+	public float m_projectileSpeed =1; 
 	
 
-	private float CalculateRateOfFire(int salvoLength, float salvoReload, float shotReload)
+	public float CalculateRateOfFire(int salvoLength, float salvoReload, float shotReload)
 	{
 		float rateOfFire;
 		rateOfFire = 60* salvoLength / ((salvoLength - 1)* salvoReload + shotReload);
 		return rateOfFire;
 	}
 
+
+	public float CalculateMultiplier(float currentMultiplierValue, float pickupBonusValue, float minValue, float maxValue)
+	{
+		float result;
+
+		result = currentMultiplierValue + (1 + (pickupBonusValue / 100)); //Calculation
+
+		if (result > maxValue)
+		{
+			result = maxValue;
+		}
+		else if (result< minValue)
+		{
+			result = minValue;
+		}
+		
+		return result;
+	}
 
 	public void AdditiveWeaponMultiplier()
 	{
@@ -38,7 +56,7 @@ public class WeaponModifier : MonoBehaviour
 	{
 		m_playerMovementScript.numberPerSalvo = (int) (m_playerMovementScript.numberPerSalvo *m_weaponBonus.SalvoLengthX); //SalvoLength
 		m_playerMovementScript.salvoTime = m_playerMovementScript.salvoTime * m_weaponBonus.SalvoReloadX;
-		m_playerMovementScript.rateOfFire = m_playerMovementScript.rateOfFire * m_weaponBonus.CalculatedRateOfFireX; //RoF / Shot Length
+		m_playerMovementScript.rateOfFire = m_playerMovementScript.rateOfFire * m_weaponBonus.ShotReloadX; //RoF / Shot Length
 	}
 	
 	private void Start()

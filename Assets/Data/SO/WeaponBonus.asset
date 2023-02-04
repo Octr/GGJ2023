@@ -18,3 +18,15 @@ MonoBehaviour:
   CalculatedRateOfFireX: 1
   DispersionAngleX: 1
   ProjectileSpeedX: 1
+  SalvoLengthMAX: 10
+  SalvoReloadMAX: 10
+  ShotReloadMAX: 10
+  CalculatedRateOfFireMAX: 10
+  DispersionAngleMAX: 10
+  ProjectileSpeedMAX: 10
+  SalvoLengthMIN: 1
+  SalvoReloadMUN: 1
+  ShotReloadMIN: 1
+  CalculatedRateOfFireMIN: 1
+  DispersionAngleMIN: 1
+  ProjectileSpeedMIN: 1
