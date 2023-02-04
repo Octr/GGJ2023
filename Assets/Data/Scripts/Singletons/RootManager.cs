@@ -81,7 +81,7 @@ public class RootManager : SingletonParent<RootManager>
 
 		if (m_timer < 1)
 		{
-			gameObject.transform.localScale += m_scaleAmount * m_rootTimescale;
+			gameObject.transform.localScale += m_scaleAmount * m_rootTimescale * Time.deltaTime;
 		}
 		else
 		{
@@ -102,7 +102,7 @@ public class RootManager : SingletonParent<RootManager>
 		if (!isRetreating) return;
 		if (m_retreatTimer > 0)
 		{
-			gameObject.transform.localScale -= m_scaleAmount * m_rootTimescale;
+			gameObject.transform.localScale -= m_scaleAmount * m_rootTimescale * Time.deltaTime;
 			m_retreatTimer -= Time.deltaTime;
 		}
 		else
