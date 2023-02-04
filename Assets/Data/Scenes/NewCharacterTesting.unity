@@ -705,6 +705,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5632554178015499455, guid: e898b81718ba92a4aa301744196cae55, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632554178015499455, guid: e898b81718ba92a4aa301744196cae55, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632554178015499455, guid: e898b81718ba92a4aa301744196cae55, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632554178015499455, guid: e898b81718ba92a4aa301744196cae55, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632554178015499455, guid: e898b81718ba92a4aa301744196cae55, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 207.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632554178015499455, guid: e898b81718ba92a4aa301744196cae55, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 20.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5632554178877451864, guid: e898b81718ba92a4aa301744196cae55, type: 3}
       propertyPath: m_Name
       value: SeedManager
@@ -1381,30 +1405,6 @@ PrefabInstance:
     - target: {fileID: 1825948185027043056, guid: 9e1f0894ecfcc7149acd96a3888d4f85, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5379082043935296121, guid: 9e1f0894ecfcc7149acd96a3888d4f85, type: 3}
-      propertyPath: pea
-      value: 
-      objectReference: {fileID: 21300000, guid: e78e5482bb072b74c9ed1a1c2f24c27c, type: 3}
-    - target: {fileID: 5379082043935296121, guid: 9e1f0894ecfcc7149acd96a3888d4f85, type: 3}
-      propertyPath: carrot
-      value: 
-      objectReference: {fileID: 21300000, guid: 862469c8eec15354bbfcdd52b6f7e335, type: 3}
-    - target: {fileID: 5379082043935296121, guid: 9e1f0894ecfcc7149acd96a3888d4f85, type: 3}
-      propertyPath: potato
-      value: 
-      objectReference: {fileID: 21300000, guid: 62f7cd27918fa224387ebee31c078dd6, type: 3}
-    - target: {fileID: 5379082043935296121, guid: 9e1f0894ecfcc7149acd96a3888d4f85, type: 3}
-      propertyPath: turnip
-      value: 
-      objectReference: {fileID: 21300000, guid: 9afe1d776bab821469a5471b74b27ee5, type: 3}
-    - target: {fileID: 5379082043935296121, guid: 9e1f0894ecfcc7149acd96a3888d4f85, type: 3}
-      propertyPath: pumpkin
-      value: 
-      objectReference: {fileID: 21300000, guid: eac1eb2aa3b1524499fb5dc74fb275bb, type: 3}
-    - target: {fileID: 5379082043935296121, guid: 9e1f0894ecfcc7149acd96a3888d4f85, type: 3}
-      propertyPath: currentAccuracyModifier
-      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 7170939432180497315, guid: 9e1f0894ecfcc7149acd96a3888d4f85, type: 3}
       propertyPath: m_Name
