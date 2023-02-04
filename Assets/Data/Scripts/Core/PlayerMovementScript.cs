@@ -5,9 +5,7 @@ using UnityEngine;
 public class PlayerMovementScript : GenericCharacterMovementScript
 {
     public static PlayerMovementScript instance;
-
- 
-
+    
     public Transform[] relativePositioningTargets;
 
     public void Awake()

@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class GenericCharacterMovementScript : MonoBehaviour
 {
+    public static event Action OnPlayerDamaged = () => { };
+    
     public Sprite currentProjectileSprite;
 
     public Rigidbody movementRBody;
@@ -63,6 +66,11 @@ public class GenericCharacterMovementScript : MonoBehaviour
 
     public void TakeDamage(float newDamage)
     {
+        if (isPlayer)
+        {
+            OnPlayerDamaged.Invoke();
+        }
+        
         health -= newDamage;
         if (health <= 0)
         {
@@ -76,6 +84,7 @@ public class GenericCharacterMovementScript : MonoBehaviour
                 gameObject.SetActive(false);
             }
         }
+        
     }
     public virtual void Move()
     {
@@ -140,7 +149,7 @@ public class GenericCharacterMovementScript : MonoBehaviour
                 newProjectile.transform.position = shootingPos.position;
                 Projectile newProjectileScript = newProjectile.transform.GetChild(0).GetComponent<Projectile>();
                 Vector3 shootingVector = shootingDirection.forward.normalized;
-                shootingVector = Quaternion.AngleAxis(Random.Range(-inaccuracy,inaccuracy), Vector3.up) * shootingVector;
+                shootingVector = Quaternion.AngleAxis(UnityEngine.Random.Range(-inaccuracy,inaccuracy), Vector3.up) * shootingVector;
 
                 newProjectileScript.movementDirection = shootingVector;
                 newProjectileScript.speed = projectileSpeed;

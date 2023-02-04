@@ -5,19 +5,29 @@ using UnityEngine;
 public class HeartManager : SingletonParent<HeartManager>
 {
     [SerializeField] private List<GameObject> m_allHearts;
-    [SerializeField] private int m_defaultHealth;
-    [SerializeField] private int m_maxHealth;
+    [SerializeField] private float m_defaultHealth;
+    //[SerializeField] private int m_maxHealth;
 
     [SerializeField] private GameObject m_heartPrefab;
+
+    [SerializeField] private GenericCharacterMovementScript m_playerMovementScript;
     
     private void Start()
     {
+        GenericCharacterMovementScript.OnPlayerDamaged += RemoveHeart;
+        m_defaultHealth = m_playerMovementScript.health;
+        
         for (int i = 0; i < m_defaultHealth; i++)
         {
             var spawnedHeart = Instantiate(m_heartPrefab);
             spawnedHeart.transform.parent = transform;
             m_allHearts.Add(spawnedHeart);
         }
+    }
+
+    private void OnDisable()
+    {
+        GenericCharacterMovementScript.OnPlayerDamaged -= RemoveHeart;
     }
 
     private void RemoveHeart()
@@ -29,6 +39,7 @@ public class HeartManager : SingletonParent<HeartManager>
         Destroy(tempHeart);
     }
 
+    /* scope creep lol 
     private void AddHeart()
     {
         int currentHearts = m_allHearts.Count;
@@ -37,20 +48,5 @@ public class HeartManager : SingletonParent<HeartManager>
         spawnedHeart.transform.parent = transform;
         m_allHearts.Add(spawnedHeart);
     }
-
-    /*private void OnGUI()
-    {
-        //Delete me
-        if (GUILayout.Button("Remove Heart"))
-        {
-            RemoveHeart();
-        }
-        
-        //Delete me
-        if (GUILayout.Button("Add Heart"))
-        {
-            AddHeart();
-        }
-    }*/
-    
+    */
 }
