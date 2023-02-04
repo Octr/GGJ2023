@@ -7,6 +7,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4952105983441101670, guid: 0fa3e48c5ef7d4544922412ca261f681, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2606acb1c2819a94f9ed82f02ea1f5b6, type: 2}
+    - target: {fileID: 5297854109863321220, guid: 0fa3e48c5ef7d4544922412ca261f681, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2606acb1c2819a94f9ed82f02ea1f5b6, type: 2}
+    - target: {fileID: 5652018295012275406, guid: 0fa3e48c5ef7d4544922412ca261f681, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7650108985565940412, guid: 0fa3e48c5ef7d4544922412ca261f681, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8962695062760598566, guid: 0fa3e48c5ef7d4544922412ca261f681, type: 3}
       propertyPath: m_Color.b
       value: 0
@@ -139,6 +155,7 @@ MonoBehaviour:
   shootingPos: {fileID: 5518107316356761211}
   yMovementPerspectiveMultiplier: 2
   agent: {fileID: 2027117375}
+  target: {fileID: 0}
 --- !u!54 &4567392608706414702 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 8962695063245075176, guid: 0fa3e48c5ef7d4544922412ca261f681, type: 3}
