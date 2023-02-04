@@ -116,7 +116,7 @@ public class Upgrader : MonoBehaviour
         {
             PlayerMovementScript.instance.currentProjectileSprite = carrot;
         }
-        else if (currentProjectileSizeModifier < 0.7f)
+        else if (currentProjectileSizeModifier < 0.8f)
         {
             PlayerMovementScript.instance.currentProjectileSprite = potato;
         }
