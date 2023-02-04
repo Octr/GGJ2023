@@ -60,9 +60,9 @@ public class WeaponModifier : MonoBehaviour
 
 	public void SetWeaponBonusToPlayer()
 	{
-		m_pms.numberPerSalvo = (int) (m_pms.numberPerSalvo *m_weaponBonus.SalvoLengthX); //SalvoLength
-		m_pms.salvoTime = m_pms.salvoTime * m_weaponBonus.ShotReloadX;
-		m_pms.rateOfFire = m_pms.rateOfFire * m_weaponBonus.SalvoReloadX; //RoF / Shot Length
+		m_pms.numberPerSalvo = (int)m_numPerSalvo;
+		m_pms.salvoTime = m_weaponBonus.ShotReloadX;
+		m_pms.rateOfFire = m_weaponBonus.SalvoReloadX;
 	}
 	
 	private void Start()
@@ -72,10 +72,11 @@ public class WeaponModifier : MonoBehaviour
 
 	private void Update()
 	{
-		//SetWeaponBonusToPlayer();
 		
-		//CalculateRateOfFire();
 		
-		//Debug.Log($"Weapon Bonus RoF: is{}");
+		SetWeaponBonusToPlayer();
+
+		
+		Debug.Log($"Salvo#{m_pms.numberPerSalvo}");
 	}
 }
