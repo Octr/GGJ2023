@@ -8,6 +8,10 @@ public class Projectile : MonoBehaviour
     public float maxTime;
     public Vector3 movementDirection;
     public float speed;
+    public float damage;
+
+
+    public bool isPlayerProjectile;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,5 +28,14 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
         }
         transform.Translate(movementDirection*speed*Time.deltaTime);
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        if ((other.tag == "Player" && !isPlayerProjectile) ||
+            (other.tag == "Enemy" && isPlayerProjectile))
+        {
+            other.GetComponent<GenericCharacterMovementScript>().TakeDamage(damage);
+            Destroy(gameObject);
+        }
     }
 }
