@@ -38,6 +38,12 @@ public class Upgrader : MonoBehaviour
     public float maxBurstFireRate;
     public float minBurstFireRate;
 
+    public Sprite pea;
+    public Sprite carrot;
+    public Sprite potato;
+    public Sprite turnip;
+    public Sprite pumpkin;
+
     public void Start()
     {
         PlayerMovementScript.instance.projectileSize = Mathf.Lerp(minProjectileSize, maxProjectileSize, currentProjectileSizeModifier);
@@ -49,6 +55,7 @@ public class Upgrader : MonoBehaviour
         WaveEnded();
         canUpgrade = true; // start on true because no enemies 
         WaveManager.OnWaveStatusChange += OnWaveStatusUpdate;
+        CheckSizeSprite();
     }
     
     private void OnDisable()
@@ -99,6 +106,30 @@ public class Upgrader : MonoBehaviour
         }
     }
 
+    public void CheckSizeSprite()
+    {
+        if (currentProjectileSizeModifier < 0.5f)
+        {
+            PlayerMovementScript.instance.currentProjectileSprite = pea;
+        }
+        else if (currentProjectileSizeModifier < 0.6f)
+        {
+            PlayerMovementScript.instance.currentProjectileSprite = carrot;
+        }
+        else if (currentProjectileSizeModifier < 0.7f)
+        {
+            PlayerMovementScript.instance.currentProjectileSprite = potato;
+        }
+        else if (currentProjectileSizeModifier < 0.9f)
+        {
+            PlayerMovementScript.instance.currentProjectileSprite = turnip;
+        }
+        else
+        {
+            PlayerMovementScript.instance.currentProjectileSprite = pumpkin;
+        }
+    }
+
     public void TriggerUpgrade(UpgradeTypeEnum proUpgradeType, UpgradeTypeEnum conUpgradeType)
     {
         upgradeCanvas.SetActive(false);
@@ -110,6 +141,7 @@ public class Upgrader : MonoBehaviour
             case UpgradeTypeEnum.projectileSize:
                 currentProjectileSizeModifier += 0.2f;
                 PlayerMovementScript.instance.projectileSize = Mathf.Lerp(minProjectileSize, maxProjectileSize, currentProjectileSizeModifier);
+                CheckSizeSprite();
                 break;
             case UpgradeTypeEnum.projectileVelocity:
                 currentProjectileSpeedModifier += 0.2f;
@@ -140,6 +172,7 @@ public class Upgrader : MonoBehaviour
             case UpgradeTypeEnum.projectileSize:
                 currentProjectileSizeModifier -= 0.1f;
                 PlayerMovementScript.instance.projectileSize = Mathf.Lerp(minProjectileSize, maxProjectileSize, currentProjectileSizeModifier);
+                CheckSizeSprite();
                 break;
             case UpgradeTypeEnum.projectileVelocity:
                 currentProjectileSpeedModifier -= 0.1f;
