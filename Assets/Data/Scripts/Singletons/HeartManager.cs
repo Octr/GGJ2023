@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HeartManager : SingletonParent<HeartManager>
 {
-   [SerializeField] private List<GameObject> m_allHearts;
+    [SerializeField] private List<GameObject> m_allHearts;
     [SerializeField] private int m_defaultHealth;
     [SerializeField] private int m_maxHealth;
 

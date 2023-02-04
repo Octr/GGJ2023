@@ -708,10 +708,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRetreating: 0
-  m_retreatTime: 1
+  m_retreatTime: 2
   m_scaleAmount: {x: -0.01, y: -0.01, z: 0}
-  m_rootTimescale: 0.1
-  m_minimumScale: {x: 0.1, y: 0.1, z: 0}
+  m_rootTimescale: 0.01
+  m_minimumScale: {x: 0.15, y: 0.1, z: 0}
   m_damageToPlayer: 1
   m_damageTime: 0.5
   hitmarker: {fileID: 2057613973751867870, guid: 770bd522d05a7b04fb0ba5c4194b764f, type: 3}
