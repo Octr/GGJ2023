@@ -368,11 +368,11 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1884194974}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 343}
+  m_AnchoredPosition: {x: 463.00003, y: 275}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1230282366
@@ -471,12 +471,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1583346868647196838, guid: 7115638cb2512cd47bdc29e6b64322be, type: 3}
       propertyPath: m_Type
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1583346868647196838, guid: 7115638cb2512cd47bdc29e6b64322be, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d4dc8e031ca50594e9d826781c620106, type: 3}
+      objectReference: {fileID: 21300000, guid: e06efb0284d52134aa00d0eb7e3285f6, type: 3}
     - target: {fileID: 1583346868647196838, guid: 7115638cb2512cd47bdc29e6b64322be, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -570,8 +570,12 @@ PrefabInstance:
       value: 2.42
       objectReference: {fileID: 0}
     - target: {fileID: 1583346869701583632, guid: 7115638cb2512cd47bdc29e6b64322be, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 463
+      objectReference: {fileID: 0}
+    - target: {fileID: 1583346869701583632, guid: 7115638cb2512cd47bdc29e6b64322be, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 83
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1583346869701583632, guid: 7115638cb2512cd47bdc29e6b64322be, type: 3}
       propertyPath: m_ConstrainProportionsScale
