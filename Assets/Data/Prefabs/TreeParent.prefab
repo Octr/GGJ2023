@@ -325,6 +325,13 @@ MonoBehaviour:
   potato: {fileID: 21300000, guid: 62f7cd27918fa224387ebee31c078dd6, type: 3}
   turnip: {fileID: 21300000, guid: 9afe1d776bab821469a5471b74b27ee5, type: 3}
   pumpkin: {fileID: 21300000, guid: eac1eb2aa3b1524499fb5dc74fb275bb, type: 3}
+  timeBetweenBursts: {fileID: 0}
+  damage: {fileID: 0}
+  projectileVelocity: {fileID: 0}
+  accuracy: {fileID: 0}
+  projectileSize: {fileID: 0}
+  burstFireSpeed: {fileID: 0}
+  seedUp: {fileID: 0}
 --- !u!114 &738931609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -820,12 +827,37 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4956993719630788028, guid: ce0a0b67836234241ab8d41dc1e0720b, type: 3}
   m_PrefabInstance: {fileID: 6461007733017244844}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4740595669810861007 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1757502164707551075, guid: ce0a0b67836234241ab8d41dc1e0720b, type: 3}
+  m_PrefabInstance: {fileID: 6461007733017244844}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2456287813651759048
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4740595669810861007}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &5085107808572685140 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2250659419320831992, guid: ce0a0b67836234241ab8d41dc1e0720b, type: 3}
   m_PrefabInstance: {fileID: 6461007733017244844}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 4740595669810861007}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e2e81a50aabc1247a0d09e6ffc59a3e, type: 3}
@@ -845,6 +877,14 @@ PrefabInstance:
     - target: {fileID: 1757502164707551075, guid: ce0a0b67836234241ab8d41dc1e0720b, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2250659419320831992, guid: ce0a0b67836234241ab8d41dc1e0720b, type: 3}
+      propertyPath: maxScale
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2250659419320831992, guid: ce0a0b67836234241ab8d41dc1e0720b, type: 3}
+      propertyPath: minScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2250659419320831992, guid: ce0a0b67836234241ab8d41dc1e0720b, type: 3}
       propertyPath: upgrader

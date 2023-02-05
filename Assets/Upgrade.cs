@@ -15,7 +15,7 @@ public enum UpgradeTypeEnum
     seed,
 }
 
-public class Upgrade : MonoBehaviour, IPointerClickHandler
+public class Upgrade : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public Upgrader upgrader;
     public TMPro.TextMeshProUGUI upgradeText;
@@ -23,9 +23,40 @@ public class Upgrade : MonoBehaviour, IPointerClickHandler
     public UpgradeTypeEnum proUpgradeType;
     public UpgradeTypeEnum conUpgradeType;
 
+    public bool hovered;
+    public float maxScale;
+    public float minScale;
+    public float scalerNormalisedTimer;
+
     public void OnPointerClick(PointerEventData eventData)
     {
         upgrader.TriggerUpgrade(proUpgradeType,conUpgradeType);
     }
-
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        hovered = true;
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        hovered = false;
+    }
+    public void Update()
+    {
+        if (hovered)
+        {
+            if (scalerNormalisedTimer < 1)
+            {
+                scalerNormalisedTimer += Time.deltaTime*4;
+            }
+        }
+        else
+        {
+            if (scalerNormalisedTimer > 0)
+            {
+                scalerNormalisedTimer -= Time.deltaTime*4;
+            }
+        }
+        float scale = Mathf.Lerp(minScale,maxScale,scalerNormalisedTimer);
+        transform.localScale = new Vector3(scale, scale, scale);
+    }
 }
