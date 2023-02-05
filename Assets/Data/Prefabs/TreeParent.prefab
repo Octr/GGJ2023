@@ -307,7 +307,7 @@ MonoBehaviour:
   minProjectileSize: 0.5
   currentProjectileSpeedModifier: 0.5
   maxProjectileSpeed: 50
-  minProjectileSpeed: 0.01
+  minProjectileSpeed: 1
   currentTimeBetweenBurstsModifier: 0.5
   maxTimeBetweenBursts: 0.01
   minTimeBetweenBursts: 3
