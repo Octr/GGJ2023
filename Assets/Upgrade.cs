@@ -28,6 +28,11 @@ public class Upgrade : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
     public float minScale;
     public float scalerNormalisedTimer;
 
+    public void OnEnable()
+    {
+        scalerNormalisedTimer = 0;
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         upgrader.TriggerUpgrade(proUpgradeType,conUpgradeType);
