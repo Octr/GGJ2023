@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Text.RegularExpressions;
 
 public class Upgrader : MonoBehaviour
 {
@@ -97,7 +98,17 @@ public class Upgrader : MonoBehaviour
         {
             upgrade.proUpgradeType = (UpgradeTypeEnum)UnityEngine.Random.Range(0,Enum.GetValues(typeof(UpgradeTypeEnum)).Length);
             upgrade.conUpgradeType = (UpgradeTypeEnum)UnityEngine.Random.Range(0, Enum.GetValues(typeof(UpgradeTypeEnum)).Length-1);
-            upgrade.upgradeText.text = upgrade.proUpgradeType.ToString()+" +2\n"+ upgrade.conUpgradeType.ToString()+" -1";
+            
+            string upgrade2 = upgrade.proUpgradeType.ToString();
+            string output2 = Regex.Replace(upgrade2, @"\p{Lu}", m => " " + m.Value.ToUpperInvariant());
+            output2 = char.ToUpperInvariant(output2[0]) + output2.Substring(1);
+
+            string upgrade1 = upgrade.conUpgradeType.ToString();
+            string output = Regex.Replace(upgrade1, @"\p{Lu}", m => " " + m.Value.ToUpperInvariant());
+            output = char.ToUpperInvariant(output[0]) + output.Substring(1);
+
+            upgrade.upgradeText.text = output2 + " +2\n" + output + " -1";
+
             if (upgrade.proUpgradeType == UpgradeTypeEnum.damage)
             {
                 upgrade.upgradeImage.sprite = damage;
