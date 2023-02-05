@@ -155,10 +155,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f25eff22a2d4ea49bbab2c5a0cab7ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentProjectileSprite: {fileID: 0}
   movementRBody: {fileID: 4567392608706414702}
   speed: 50
   shootingDirection: {fileID: 4567392608518589404}
-  projectileToShoot: {fileID: 8302166367347694412, guid: e256fd15de538474db3fb47393c0bb36, type: 3}
+  projectileToShoot: {fileID: 5640656901526286208, guid: 10529c8d05fc90b41b0527f3e7626789, type: 3}
   fireTimer: 0
   timeBetweenBursts: 1
   salvoTimer: 0
