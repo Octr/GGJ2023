@@ -1803,6 +1803,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5379082043935296121, guid: 9e1f0894ecfcc7149acd96a3888d4f85, type: 3}
+      propertyPath: damage
+      value: 
+      objectReference: {fileID: 21300000, guid: 5f9f00df174739f419540c7b6c8f5cb2, type: 3}
+    - target: {fileID: 5379082043935296121, guid: 9e1f0894ecfcc7149acd96a3888d4f85, type: 3}
+      propertyPath: seedUp
+      value: 
+      objectReference: {fileID: 21300000, guid: 33ed2a4627da2ed4d9e470829fb7c51c, type: 3}
+    - target: {fileID: 5379082043935296121, guid: 9e1f0894ecfcc7149acd96a3888d4f85, type: 3}
+      propertyPath: accuracy
+      value: 
+      objectReference: {fileID: 21300000, guid: e7afcba366f45274698d81709c2932ea, type: 3}
+    - target: {fileID: 5379082043935296121, guid: 9e1f0894ecfcc7149acd96a3888d4f85, type: 3}
+      propertyPath: burstFireSpeed
+      value: 
+      objectReference: {fileID: 21300000, guid: ae2adaa6ebb49c747aeb39b922d23898, type: 3}
+    - target: {fileID: 5379082043935296121, guid: 9e1f0894ecfcc7149acd96a3888d4f85, type: 3}
+      propertyPath: projectileSize
+      value: 
+      objectReference: {fileID: 21300000, guid: e946169432e70984ea27e8faf4eda068, type: 3}
+    - target: {fileID: 5379082043935296121, guid: 9e1f0894ecfcc7149acd96a3888d4f85, type: 3}
+      propertyPath: timeBetweenBursts
+      value: 
+      objectReference: {fileID: 21300000, guid: ae2adaa6ebb49c747aeb39b922d23898, type: 3}
+    - target: {fileID: 5379082043935296121, guid: 9e1f0894ecfcc7149acd96a3888d4f85, type: 3}
+      propertyPath: projectileVelocity
+      value: 
+      objectReference: {fileID: 21300000, guid: e7afcba366f45274698d81709c2932ea, type: 3}
     - target: {fileID: 7170939432180497315, guid: 9e1f0894ecfcc7149acd96a3888d4f85, type: 3}
       propertyPath: m_Name
       value: TreeParent

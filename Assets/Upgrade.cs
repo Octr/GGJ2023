@@ -12,6 +12,7 @@ public enum UpgradeTypeEnum
     accuracy,
     projectileSize,
     burstFireSpeed,
+    seed,
 }
 
 public class Upgrade : MonoBehaviour, IPointerClickHandler

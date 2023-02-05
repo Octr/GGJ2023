@@ -107,7 +107,7 @@ MonoBehaviour:
   damageTimer: 0
   damageTime: 1
   hitmarker: {fileID: 2057613973751867870, guid: 770bd522d05a7b04fb0ba5c4194b764f, type: 3}
-  damage: 1
+  damage: 2
 --- !u!65 &6934346229956269166
 BoxCollider:
   m_ObjectHideFlags: 0

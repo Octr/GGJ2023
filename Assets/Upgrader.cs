@@ -44,6 +44,15 @@ public class Upgrader : MonoBehaviour
     public Sprite turnip;
     public Sprite pumpkin;
 
+    public Sprite timeBetweenBursts;
+    public Sprite damage;
+    public Sprite projectileVelocity;
+    public Sprite accuracy;
+    public Sprite projectileSize;
+    public Sprite burstFireSpeed;
+    public Sprite seedUp;
+
+
     public void Start()
     {
         PlayerMovementScript.instance.projectileSize = Mathf.Lerp(minProjectileSize, maxProjectileSize, currentProjectileSizeModifier);
@@ -87,8 +96,37 @@ public class Upgrader : MonoBehaviour
         foreach (Upgrade upgrade in upgrades)
         {
             upgrade.proUpgradeType = (UpgradeTypeEnum)UnityEngine.Random.Range(0,Enum.GetValues(typeof(UpgradeTypeEnum)).Length);
-            upgrade.conUpgradeType = (UpgradeTypeEnum)UnityEngine.Random.Range(0, Enum.GetValues(typeof(UpgradeTypeEnum)).Length);
+            upgrade.conUpgradeType = (UpgradeTypeEnum)UnityEngine.Random.Range(0, Enum.GetValues(typeof(UpgradeTypeEnum)).Length-1);
             upgrade.upgradeText.text = upgrade.proUpgradeType.ToString()+" +2\n"+ upgrade.conUpgradeType.ToString()+" -1";
+            if (upgrade.proUpgradeType == UpgradeTypeEnum.damage)
+            {
+                upgrade.upgradeImage.sprite = damage;
+            }
+            else if (upgrade.proUpgradeType == UpgradeTypeEnum.projectileSize)
+            {
+                upgrade.upgradeImage.sprite = projectileSize;
+            }
+            else if (upgrade.proUpgradeType == UpgradeTypeEnum.accuracy)
+            {
+                upgrade.upgradeImage.sprite = accuracy;
+            }
+            else if (upgrade.proUpgradeType == UpgradeTypeEnum.burstFireSpeed)
+            {
+                upgrade.upgradeImage.sprite = burstFireSpeed;
+            }
+            else if (upgrade.proUpgradeType == UpgradeTypeEnum.seed)
+            {
+                upgrade.upgradeImage.sprite = seedUp;
+            }
+            else if (upgrade.proUpgradeType == UpgradeTypeEnum.projectileVelocity)
+            {
+                upgrade.upgradeImage.sprite = projectileVelocity;
+            }
+            else if (upgrade.proUpgradeType == UpgradeTypeEnum.timeBetweenBursts)
+            {
+                upgrade.upgradeImage.sprite = timeBetweenBursts;
+            }
+
         }
     }
     public void OnTriggerEnter(Collider other)
@@ -162,6 +200,9 @@ public class Upgrader : MonoBehaviour
             case UpgradeTypeEnum.burstFireSpeed:
                 currentBurstFireRate += 0.2f;
                 PlayerMovementScript.instance.burstFireSpeed = Mathf.Lerp(minBurstFireRate, maxBurstFireRate, currentBurstFireRate);
+                break;
+            case UpgradeTypeEnum.seed:
+                SeedsManager.instance.UpdateSeeds(10);
                 break;
             default:
                 break;
