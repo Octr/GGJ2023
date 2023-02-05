@@ -26,14 +26,14 @@ public class WaveManager : SingletonParent<WaveManager>
 
     [Header("Enemy Wave Data")]
     [SerializeField] private int m_wavesDefeated = 0;
+    [SerializeField] private int m_enemySpawnIncreaseRate = 1;
+
 
     public int WavesDefeated => m_wavesDefeated;
     public bool WaveIsActive => m_waveIsActive;
     private bool m_waveIsActive = false;
     private int m_activeEnemyCount = 0;
 
-    private int m_enemySpawnIncreaseRate = 0;
-    
 
     private void Start()
     {
@@ -42,9 +42,8 @@ public class WaveManager : SingletonParent<WaveManager>
         Upgrader.OnPowerUpSelected += OnPowerUpSelected;
 
         m_maxSpawnPoint = m_enemySpawnPoints.Length; // maxSpawnPoint = however many spawn points there are
-        m_enemySpawnIncreaseRate = 0;
 
-        
+
         // always start scene with no enemies 
         GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
         for (int i = 0; i < gameObjects.Length; i++)
@@ -103,9 +102,8 @@ public class WaveManager : SingletonParent<WaveManager>
         }
         // Debug.Log("Increase enemy difficulty sliders");
         m_activeEnemyCount = m_enemySpawnCount;
-        
-        m_enemySpawnIncreaseRate++;
-        m_enemySpawnCount = m_enemySpawnCount + m_enemySpawnIncreaseRate;
+
+       m_enemySpawnCount = m_enemySpawnCount + m_enemySpawnIncreaseRate;
     }
 
     // when enemy dies, decrease activeEnemyCount
