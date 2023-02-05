@@ -1870,7 +1870,7 @@ PrefabInstance:
     - target: {fileID: 5379082043935296121, guid: 9e1f0894ecfcc7149acd96a3888d4f85, type: 3}
       propertyPath: burstFireSpeed
       value: 
-      objectReference: {fileID: 21300000, guid: ae2adaa6ebb49c747aeb39b922d23898, type: 3}
+      objectReference: {fileID: 21300000, guid: 1a166f54803c36c4a8dbc97cb8956db9, type: 3}
     - target: {fileID: 5379082043935296121, guid: 9e1f0894ecfcc7149acd96a3888d4f85, type: 3}
       propertyPath: projectileSize
       value: 
