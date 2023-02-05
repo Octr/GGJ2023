@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -6,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class HeartManager : SingletonParent<HeartManager>
 {
+    public static event Action OnPlayerDied = () => { };
+    
     [SerializeField] private List<GameObject> m_allHearts;
     [SerializeField] private float m_defaultHealth;
     //[SerializeField] private int m_maxHealth;

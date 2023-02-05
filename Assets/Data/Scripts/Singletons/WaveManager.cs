@@ -63,10 +63,11 @@ public class WaveManager : SingletonParent<WaveManager>
     // going to reset all our variables when scene reloads (or when level lost)
     private void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
+        m_waveIsActive = false;
         m_wavesDefeated = 0;
-        m_enemySpawnCount = 1;
+        m_enemySpawnCount = 2;
         m_nextSpawnPoint = 0;
-        m_enemySpawnIncreaseRate = 0;
+        m_enemySpawnIncreaseRate = 1;
 
         // always start scene with no enemies 
         GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
@@ -88,9 +89,6 @@ public class WaveManager : SingletonParent<WaveManager>
         m_waveIsActive = true;
         for (int i = 0; i < m_enemySpawnCount; i++)
         {
-            // will also modify difficulty of enemies (or have enemies modify themselves with ref to m_wavesDefeated)
-            
-            // enemy will spawn at a spawnPoints
             Instantiate(m_enemies[0], m_enemySpawnPoints[m_nextSpawnPoint]);
             
             // if next spawn point is same as max -1 bc arrays, reset to 0
@@ -100,7 +98,6 @@ public class WaveManager : SingletonParent<WaveManager>
             }
             m_nextSpawnPoint++;
         }
-        // Debug.Log("Increase enemy difficulty sliders");
         m_activeEnemyCount = m_enemySpawnCount;
 
        m_enemySpawnCount = m_enemySpawnCount + m_enemySpawnIncreaseRate;
