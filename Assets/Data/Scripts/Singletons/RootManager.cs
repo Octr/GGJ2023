@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RootManager : SingletonParent<RootManager>
 {
@@ -14,6 +15,7 @@ public class RootManager : SingletonParent<RootManager>
 	private bool m_rootGrowthActive => WaveManager.Instance.WaveIsActive;
 
 	private float m_timer;
+	private Vector3 m_scaleStart;
 
 	private bool m_playerIsInTheRoots;
 	[SerializeField] private float m_damageToPlayer;
@@ -25,12 +27,20 @@ public class RootManager : SingletonParent<RootManager>
 	private void Start()
 	{
 		EnemyMovement.OnEnemyDied += SetRetreatTimer;
+		SceneManager.sceneLoaded += ResetScale;
+
+		m_scaleStart = gameObject.transform.localScale;
 	}
 
 	private void OnDisable()
 	{
 		EnemyMovement.OnEnemyDied -= SetRetreatTimer;
+		SceneManager.sceneLoaded -= ResetScale;
+	}
 
+	private void ResetScale(Scene arg0, LoadSceneMode loadSceneMode)
+	{
+		gameObject.transform.localScale = m_scaleStart;
 	}
 
 	private void Update()
