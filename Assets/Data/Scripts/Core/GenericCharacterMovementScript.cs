@@ -66,9 +66,11 @@ public class GenericCharacterMovementScript : MonoBehaviour
 
     public void TakeDamage(float newDamage)
     {
+        
         if (isPlayer)
         {
             OnPlayerDamaged.Invoke();
+            CameraShake.instance.CameraShakeByTime(0.1f);
         }
         
         health -= newDamage;
