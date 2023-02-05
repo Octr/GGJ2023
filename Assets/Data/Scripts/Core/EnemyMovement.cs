@@ -6,6 +6,10 @@ using UnityEngine.AI;
 
 public class EnemyMovement : GenericCharacterMovementScript
 {
+    public Sprite enemyVariant1;
+    public Sprite enemyVariant2;
+    public SpriteRenderer
+
     public static event Action OnEnemyDied = () => {}; // notify WaveManager
     public void Awake()
     {
