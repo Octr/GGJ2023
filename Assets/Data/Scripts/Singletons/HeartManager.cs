@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HeartManager : SingletonParent<HeartManager>
 {
@@ -33,7 +34,7 @@ public class HeartManager : SingletonParent<HeartManager>
     private void RemoveHeart()
     {
         int currentHearts = m_allHearts.Count;
-        if(currentHearts <= 0) return;
+        if (currentHearts <= 0) return;
         GameObject tempHeart = m_allHearts[currentHearts - 1];
         m_allHearts.Remove(tempHeart);
         Destroy(tempHeart);
