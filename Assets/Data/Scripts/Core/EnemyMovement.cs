@@ -13,6 +13,8 @@ public class EnemyMovement : GenericCharacterMovementScript
     }
     public void Start()
     {
+        fireTimer = UnityEngine.Random.Range(0f, 1f);
+        salvoTimer = UnityEngine.Random.Range(0f, 1f);
         AIManager.instance.AddEnemy(this);
     }
 

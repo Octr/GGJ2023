@@ -251,6 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f25eff22a2d4ea49bbab2c5a0cab7ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyShootSound: {fileID: 8300000, guid: c7c34d92144bf414a81454ce04d0c043, type: 3}
   currentProjectileSprite: {fileID: 0}
   movementRBody: {fileID: 4567392608706414702}
   speed: 50

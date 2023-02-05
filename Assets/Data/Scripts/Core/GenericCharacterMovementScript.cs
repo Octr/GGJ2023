@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class GenericCharacterMovementScript : MonoBehaviour
 {
+
+    public AudioClip enemyShootSound;
     public static event Action OnPlayerDamaged = () => { };
     
     public Sprite currentProjectileSprite;
@@ -158,7 +160,12 @@ public class GenericCharacterMovementScript : MonoBehaviour
                 newProjectileScript.damage = projectileDamage;
                 newProjectileScript.isPlayerProjectile = isPlayer;
                 newProjectile.transform.localScale *= projectileSize;
-
+                if (!isPlayer)
+                {
+                    newProjectile.GetComponent<AudioSource>().clip = enemyShootSound;
+                    newProjectile.GetComponent<AudioSource>().volume = 0.5f;
+                    newProjectile.GetComponent<AudioSource>().Play();
+                }
                 if (currentProjectileSprite != null)
                 {
                     newProjectileScript.render.sprite = currentProjectileSprite;
