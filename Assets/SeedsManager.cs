@@ -11,6 +11,12 @@ public class SeedsManager : MonoBehaviour
 
     public List<GameObject> roots = new List<GameObject>();
 
+    public static SeedsManager instance;
+    public void Awake()
+    {
+        instance = this;
+    }
+
     public void Start()
     {
         UpdateSeeds(5);
