@@ -72,7 +72,11 @@ public class GenericCharacterMovementScript : MonoBehaviour
         if (isPlayer)
         {
             OnPlayerDamaged.Invoke();
-            CameraShake.instance.CameraShakeByTime(0.1f);
+            CameraShake.instance.CameraShakeByTime(0.1f, 0.3f);
+        }
+        else
+        {
+            CameraShake.instance.CameraShakeByTime(0.05f, 0.1f);
         }
         
         health -= newDamage;
@@ -85,7 +89,7 @@ public class GenericCharacterMovementScript : MonoBehaviour
             }
             else
             {
-                gameObject.SetActive(false);
+                enabled = false;
             }
         }
         
@@ -162,9 +166,14 @@ public class GenericCharacterMovementScript : MonoBehaviour
                 newProjectile.transform.localScale *= projectileSize;
                 if (!isPlayer)
                 {
+                    
                     newProjectile.GetComponent<AudioSource>().clip = enemyShootSound;
                     newProjectile.GetComponent<AudioSource>().volume = 0.5f;
                     newProjectile.GetComponent<AudioSource>().Play();
+                }
+                else
+                {
+                    CameraShake.instance.CameraShakeByTime(0.05f, 0.05f);
                 }
                 if (currentProjectileSprite != null)
                 {
