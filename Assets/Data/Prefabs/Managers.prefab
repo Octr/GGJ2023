@@ -9,13 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 390610781}
+  - component: {fileID: 1468689692}
   m_Layer: 0
   m_Name: PostProcessing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &390610781
 Transform:
   m_ObjectHideFlags: 0
@@ -33,6 +34,22 @@ Transform:
   m_Father: {fileID: 1933464474915348788}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1468689692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390610780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fff145a34f822144aa40b07d4ad2d9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Heaven: {fileID: 2075140470}
+  m_Hell: {fileID: 1322526544}
+  HeavenToHellSlider: 0
+  rootsManagerXScale: {fileID: 1933464474800366988}
 --- !u!1 &489200359
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,7 +131,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &840164058
@@ -198,7 +215,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1036073615
@@ -282,7 +299,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1322526542
@@ -332,7 +349,7 @@ MonoBehaviour:
   sharedProfile: {fileID: 11400000, guid: 70f343d16fe7c114b9504e29f21a59c4, type: 2}
   isGlobal: 1
   blendDistance: 0
-  weight: 0.184
+  weight: 1
   priority: 0
 --- !u!1 &1402347182
 GameObject:
@@ -450,7 +467,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2075140468
@@ -500,7 +517,7 @@ MonoBehaviour:
   sharedProfile: {fileID: 11400000, guid: 459d9cb78f6225f49ac5452751232401, type: 2}
   isGlobal: 1
   blendDistance: 0
-  weight: 0.184
+  weight: 1
   priority: 0
 --- !u!1 &1933464474624572811
 GameObject:
