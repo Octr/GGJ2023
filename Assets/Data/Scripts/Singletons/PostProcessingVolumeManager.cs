@@ -50,9 +50,7 @@ public class PostProcessingVolumeManager : SingletonParent<PostProcessingVolumeM
         }
 
         m_Heaven.weight = normie;
-        m_Hell.weight = 1-normie;
-        
-        Debug.Log($"Heaven: {m_Heaven.weight}, Hell: {m_Hell.weight}");
+        m_Hell.weight = 1 - normie;
 
     }
     
