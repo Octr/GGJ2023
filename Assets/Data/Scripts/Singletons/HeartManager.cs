@@ -44,10 +44,17 @@ public class HeartManager : SingletonParent<HeartManager>
        
        if(m_allHearts.Count <= 0)
        {
+            StartCoroutine(Death());
            //PLAYER IS DYING AND RELOADING THE GAME HERE!
-           SceneManager.LoadScene("NewCharacterTesting");
+           //SceneManager.LoadScene("NewCharacterTesting");
        }
            
+    }
+
+    public IEnumerator Death()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("NewCharacterTesting");
     }
 
     /* scope creep lol 

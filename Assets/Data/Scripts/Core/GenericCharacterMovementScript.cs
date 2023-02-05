@@ -85,7 +85,7 @@ public class GenericCharacterMovementScript : MonoBehaviour
             }
             else
             {
-                gameObject.SetActive(false);
+                enabled = false;
             }
         }
         

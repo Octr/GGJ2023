@@ -19,6 +19,13 @@ public class PlayerMovementScript : GenericCharacterMovementScript
         base.Move();
     }
 
+    public override void Death()
+    {
+        animator1.SetTrigger("Death");
+        animator2.SetTrigger("Death");
+        base.Death();
+    }
+
     public override void FiringInput()
     {
         firing = Input.GetKey(KeyCode.Mouse0);
