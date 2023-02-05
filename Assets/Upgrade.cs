@@ -30,6 +30,7 @@ public class Upgrade : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
 
     public void OnEnable()
     {
+        hovered = false;
         scalerNormalisedTimer = 0;
     }
 
