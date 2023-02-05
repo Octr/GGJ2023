@@ -13,13 +13,16 @@ public class HeartManager : SingletonParent<HeartManager>
     //[SerializeField] private int m_maxHealth;
 
     [SerializeField] private GameObject m_heartPrefab;
-
     [SerializeField] private GenericCharacterMovementScript m_playerMovementScript;
+
+    public bool PlayerIsDead => m_playerIsDead;
+    private bool m_playerIsDead = false;
     
     private void Start()
     {
         GenericCharacterMovementScript.OnPlayerDamaged += RemoveHeart;
         m_defaultHealth = m_playerMovementScript.health;
+        m_playerIsDead = false;
         
         for (int i = 0; i < m_defaultHealth; i++)
         {
@@ -46,6 +49,7 @@ public class HeartManager : SingletonParent<HeartManager>
        
        if(m_allHearts.Count <= 0)
        {
+           m_playerIsDead = true;
            OnPlayerDied.Invoke(); 
            StartCoroutine(Death());
            //PLAYER IS DYING AND RELOADING THE GAME HERE!
@@ -71,3 +75,4 @@ public class HeartManager : SingletonParent<HeartManager>
     }
     */
 }
+
