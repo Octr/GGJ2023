@@ -307,7 +307,7 @@ MonoBehaviour:
   minProjectileSize: 0.5
   currentProjectileSpeedModifier: 0.5
   maxProjectileSpeed: 50
-  minProjectileSpeed: 0.01
+  minProjectileSpeed: 1
   currentTimeBetweenBurstsModifier: 0.5
   maxTimeBetweenBursts: 0.01
   minTimeBetweenBursts: 3
@@ -325,13 +325,13 @@ MonoBehaviour:
   potato: {fileID: 21300000, guid: 62f7cd27918fa224387ebee31c078dd6, type: 3}
   turnip: {fileID: 21300000, guid: 9afe1d776bab821469a5471b74b27ee5, type: 3}
   pumpkin: {fileID: 21300000, guid: eac1eb2aa3b1524499fb5dc74fb275bb, type: 3}
-  timeBetweenBursts: {fileID: 0}
-  damage: {fileID: 0}
-  projectileVelocity: {fileID: 0}
-  accuracy: {fileID: 0}
-  projectileSize: {fileID: 0}
-  burstFireSpeed: {fileID: 0}
-  seedUp: {fileID: 0}
+  timeBetweenBursts: {fileID: 21300000, guid: 1a166f54803c36c4a8dbc97cb8956db9, type: 3}
+  damage: {fileID: 21300000, guid: 5f9f00df174739f419540c7b6c8f5cb2, type: 3}
+  projectileVelocity: {fileID: 21300000, guid: e7afcba366f45274698d81709c2932ea, type: 3}
+  accuracy: {fileID: 21300000, guid: d51b82df80c48de47b3a504ddd366257, type: 3}
+  projectileSize: {fileID: 21300000, guid: e946169432e70984ea27e8faf4eda068, type: 3}
+  burstFireSpeed: {fileID: 21300000, guid: ae2adaa6ebb49c747aeb39b922d23898, type: 3}
+  seedUp: {fileID: 21300000, guid: 33ed2a4627da2ed4d9e470829fb7c51c, type: 3}
 --- !u!114 &738931609
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -47,7 +46,8 @@ public class HeartManager : SingletonParent<HeartManager>
        
        if(m_allHearts.Count <= 0)
        {
-            StartCoroutine(Death());
+           OnPlayerDied.Invoke(); 
+           StartCoroutine(Death());
            //PLAYER IS DYING AND RELOADING THE GAME HERE!
            //SceneManager.LoadScene("NewCharacterTesting");
        }

@@ -98,6 +98,10 @@ MonoBehaviour:
   upgradeImage: {fileID: 504091540306432783}
   proUpgradeType: 0
   conUpgradeType: 0
+  hovered: 0
+  maxScale: 0
+  minScale: 0
+  scalerNormalisedTimer: 0
 --- !u!1 &2686503316259199645
 GameObject:
   m_ObjectHideFlags: 0
