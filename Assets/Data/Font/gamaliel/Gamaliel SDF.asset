@@ -103,6 +103,21 @@ MonoBehaviour:
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
+  - m_Index: 50
+    m_Metrics:
+      m_Width: 47.6875
+      m_Height: 72.890625
+      m_HorizontalBearingX: 0.90625
+      m_HorizontalBearingY: 60.296875
+      m_HorizontalAdvance: 51.296875
+    m_GlyphRect:
+      m_X: 182
+      m_Y: 161
+      m_Width: 49
+      m_Height: 74
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
   - m_Index: 51
     m_Metrics:
       m_Width: 49.5
@@ -208,6 +223,21 @@ MonoBehaviour:
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
+  - m_Index: 74
+    m_Metrics:
+      m_Width: 23.40625
+      m_Height: 63.890625
+      m_HorizontalBearingX: 1.796875
+      m_HorizontalBearingY: 62.09375
+      m_HorizontalAdvance: 27
+    m_GlyphRect:
+      m_X: 138
+      m_Y: 174
+      m_Width: 25
+      m_Height: 65
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
   - m_Index: 77
     m_Metrics:
       m_Width: 23.40625
@@ -265,6 +295,21 @@ MonoBehaviour:
       m_Y: 10
       m_Width: 31
       m_Height: 63
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+  - m_Index: 86
+    m_Metrics:
+      m_Width: 37.796875
+      m_Height: 48.59375
+      m_HorizontalBearingX: 4.5
+      m_HorizontalBearingY: 46.796875
+      m_HorizontalAdvance: 43.203125
+    m_GlyphRect:
+      m_X: 344
+      m_Y: 160
+      m_Width: 39
+      m_Height: 49
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
@@ -328,51 +373,6 @@ MonoBehaviour:
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
-  - m_Index: 50
-    m_Metrics:
-      m_Width: 47.6875
-      m_Height: 72.890625
-      m_HorizontalBearingX: 0.90625
-      m_HorizontalBearingY: 60.296875
-      m_HorizontalAdvance: 51.296875
-    m_GlyphRect:
-      m_X: 182
-      m_Y: 161
-      m_Width: 49
-      m_Height: 74
-    m_Scale: 1
-    m_AtlasIndex: 0
-    m_ClassDefinitionType: 0
-  - m_Index: 86
-    m_Metrics:
-      m_Width: 37.796875
-      m_Height: 48.59375
-      m_HorizontalBearingX: 4.5
-      m_HorizontalBearingY: 46.796875
-      m_HorizontalAdvance: 43.203125
-    m_GlyphRect:
-      m_X: 344
-      m_Y: 160
-      m_Width: 39
-      m_Height: 49
-    m_Scale: 1
-    m_AtlasIndex: 0
-    m_ClassDefinitionType: 0
-  - m_Index: 74
-    m_Metrics:
-      m_Width: 23.40625
-      m_Height: 63.890625
-      m_HorizontalBearingX: 1.796875
-      m_HorizontalBearingY: 62.09375
-      m_HorizontalAdvance: 27
-    m_GlyphRect:
-      m_X: 138
-      m_Y: 174
-      m_Width: 25
-      m_Height: 65
-    m_Scale: 1
-    m_AtlasIndex: 0
-    m_ClassDefinitionType: 0
   m_CharacterTable:
   - m_ElementType: 1
     m_Unicode: 32
@@ -389,6 +389,10 @@ MonoBehaviour:
   - m_ElementType: 1
     m_Unicode: 80
     m_GlyphIndex: 49
+    m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 81
+    m_GlyphIndex: 50
     m_Scale: 1
   - m_ElementType: 1
     m_Unicode: 82
@@ -419,6 +423,10 @@ MonoBehaviour:
     m_GlyphIndex: 73
     m_Scale: 1
   - m_ElementType: 1
+    m_Unicode: 105
+    m_GlyphIndex: 74
+    m_Scale: 1
+  - m_ElementType: 1
     m_Unicode: 108
     m_GlyphIndex: 77
     m_Scale: 1
@@ -435,6 +443,10 @@ MonoBehaviour:
     m_GlyphIndex: 85
     m_Scale: 1
   - m_ElementType: 1
+    m_Unicode: 117
+    m_GlyphIndex: 86
+    m_Scale: 1
+  - m_ElementType: 1
     m_Unicode: 119
     m_GlyphIndex: 88
     m_Scale: 1
@@ -449,18 +461,6 @@ MonoBehaviour:
   - m_ElementType: 1
     m_Unicode: 8230
     m_GlyphIndex: 230
-    m_Scale: 1
-  - m_ElementType: 1
-    m_Unicode: 81
-    m_GlyphIndex: 50
-    m_Scale: 1
-  - m_ElementType: 1
-    m_Unicode: 117
-    m_GlyphIndex: 86
-    m_Scale: 1
-  - m_ElementType: 1
-    m_Unicode: 105
-    m_GlyphIndex: 74
     m_Scale: 1
   m_AtlasTextures:
   - {fileID: 6183887576301040200}
@@ -775,7 +775,7 @@ Material:
     - _OutlineSoftness: 0
     - _OutlineUVSpeedX: 0
     - _OutlineUVSpeedY: 0
-    - _OutlineWidth: 0
+    - _OutlineWidth: 0.159
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
     - _ScaleRatioA: 0.9
