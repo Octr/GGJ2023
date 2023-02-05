@@ -87,6 +87,7 @@ public class WaveManager : SingletonParent<WaveManager>
     {
         OnWaveStatusChange.Invoke(true);
         m_waveIsActive = true;
+        m_nextSpawnPoint = 0;
         for (int i = 0; i < m_enemySpawnCount; i++)
         {
             Instantiate(m_enemies[0], m_enemySpawnPoints[m_nextSpawnPoint]);

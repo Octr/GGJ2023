@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 23979
+  controlID: 27217
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 23980
+  controlID: 27218
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 23961
+  controlID: 27202
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -226,7 +226,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 68a3f6ff92a3f6ffbca3f6ffc2a3f6ffcca3f6ffe0a3f6ff4ea4f6ffcca6f6ffac08f7ff245df7ffbc5df7ffc65df7ff165ef7ff465ef7ffdef8ffffe8f8fffffaf8ffff68f9ffff
+      m_ExpandedIDs: d4a2f6ffdaa2f6fff8a2f6ff68a3f6ff92a3f6ffbca3f6ffc2a3f6ff4ea4f6ffcca6f6ffac08f7ff245df7ffbc5df7ffc65df7ff165ef7ff465ef7ffdef8ffffe8f8fffffaf8ffff68f9ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -558,9 +558,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0, y: 9.49, z: 0}
+    m_Target: {x: -1.1614513, y: 5.5311127, z: -1.1336473}
     speed: 2
-    m_Value: {x: 0, y: 9.49, z: 0}
+    m_Value: {x: -1.1614513, y: 5.5311127, z: -1.1336473}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -607,13 +607,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.18644495, y: 0.8104779, z: -0.43004364, w: -0.35151538}
+    m_Target: {x: 0.46889216, y: 0.5285445, z: -0.46239117, w: 0.5358322}
     speed: 2
-    m_Value: {x: -0.18643221, y: 0.81042254, z: -0.43001425, w: -0.35149136}
+    m_Value: {x: 0.46885914, y: 0.52850723, z: -0.4623586, w: 0.5357945}
   m_Size:
-    m_Target: 3.804693
+    m_Target: 32.383217
     speed: 2
-    m_Value: 3.804693
+    m_Value: 32.383217
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -810,7 +810,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_SearchFilter:
-    m_NameFilter: option
+    m_NameFilter: wave manager
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -824,7 +824,7 @@ MonoBehaviour:
     m_Folders:
     - Assets/Data/Textures/Sprites/Icons&Card
     m_Globs: []
-    m_OriginalText: option
+    m_OriginalText: wave manager
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
@@ -890,8 +890,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: aaa3f6ff80a3f6ff54a3f6ff
-    m_LastClickedInstanceID: -613462
+    m_SelectedInstanceIDs: daa2f6ff
+    m_LastClickedInstanceID: -613670
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300006e600000
     m_RenameOverlay:
@@ -979,7 +979,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -613548
+  m_LastSelectedObjectID: -613670
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1041,7 +1041,7 @@ MonoBehaviour:
     m_CachedPref: 160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -613548
+  m_LastInspectedObjectInstanceID: -613670
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
