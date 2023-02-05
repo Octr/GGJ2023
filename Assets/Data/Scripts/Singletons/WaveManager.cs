@@ -26,6 +26,8 @@ public class WaveManager : SingletonParent<WaveManager>
 
     [Header("Enemy Wave Data")]
     [SerializeField] private int m_wavesDefeated = 0;
+
+    public int WavesDefeated => m_wavesDefeated;
     public bool WaveIsActive => m_waveIsActive;
     private bool m_waveIsActive = false;
     private int m_activeEnemyCount = 0;
@@ -118,11 +120,5 @@ public class WaveManager : SingletonParent<WaveManager>
         m_waveIsActive = false;
         m_wavesDefeated++;
         // probably going to be other stuff such as creating downtime and allowing power upgrades 
-    }
-
-    private void OnGUI()
-    {
-        GUI.color = Color.red;
-        GUILayout.Label($"Waves defeated : {m_wavesDefeated}");
     }
 }
