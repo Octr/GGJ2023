@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -38,6 +39,15 @@ public class HeartManager : SingletonParent<HeartManager>
         GameObject tempHeart = m_allHearts[currentHearts - 1];
         m_allHearts.Remove(tempHeart);
         Destroy(tempHeart);
+        
+       int currentHearts2 = m_allHearts.Count;
+       
+       if(m_allHearts.Count <= 0)
+       {
+           //PLAYER IS DYING AND RELOADING THE GAME HERE!
+           SceneManager.LoadScene("NewCharacterTesting");
+       }
+           
     }
 
     /* scope creep lol 
