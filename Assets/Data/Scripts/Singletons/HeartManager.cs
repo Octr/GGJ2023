@@ -1,11 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class HeartManager : SingletonParent<HeartManager>
 {
+    public static event Action OnPlayerDied = () => { };
+    
     [SerializeField] private List<GameObject> m_allHearts;
     [SerializeField] private float m_defaultHealth;
     //[SerializeField] private int m_maxHealth;
@@ -44,7 +46,8 @@ public class HeartManager : SingletonParent<HeartManager>
        
        if(m_allHearts.Count <= 0)
        {
-            StartCoroutine(Death());
+           OnPlayerDied.Invoke(); 
+           StartCoroutine(Death());
            //PLAYER IS DYING AND RELOADING THE GAME HERE!
            //SceneManager.LoadScene("NewCharacterTesting");
        }
